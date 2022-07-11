@@ -1,0 +1,1923 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,200&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+#particles-js {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    top: 50px;
+    right: 0;
+    bottom: 50px;
+    left: 0;
+    z-index: 100;
+}
+
+/* canvas {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 50px;
+    right: 0;
+    bottom: 50px;
+    left: 0;
+    z-index: 1000; 
+} */
+
+
+#preloader {
+    background: #000 url(img/circle-loader-gif-2.gif) no-repeat center;
+    background-size: 15%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+
+/****** SCROLL BAR ******/
+
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #262626;
+    box-shadow: -5px -5px 10px #0d0d0d inset,
+                 5px 5px 10px #333 inset;
+
+    /* background: linear-gradient(#5a165a, #6d2161); */
+     background: linear-gradient(to left, #bdc3c7, #2c3e50);
+}
+
+
+::-webkit-scrollbar-thumb {
+    border-radius:50px;
+    background-color: #837878;
+    
+    border-radius: 50px;
+     box-shadow: -5px -5px 10px #5c5454 inset,
+                 5px 5px 10px rgb(197, 196, 196) inset;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius:50px;
+    background-color: #ffffff;
+    border-radius: 50px;
+     box-shadow: -5px -5px 10px #5c5454 inset,
+                 5px 5px 10px rgb(197, 196, 196) inset;
+}
+
+
+section {
+    padding: 100px 150px;
+}
+
+
+/**** VIDEO BACKGROUND ****/
+.vid-bg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+    z-index: -50000;
+}
+
+
+@media only screen and (min-width:768px) {
+    .vid-bg  {
+        min-width: 100vw;
+        min-height: 100%;
+       
+    }
+
+}
+
+
+/***** MAIN *****/
+
+
+.main {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    /* background: url(img/3r.jpg)no-repeat; */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.main .content {
+    max-width: 800px;
+    z-index: 200;
+}
+
+.main .content h2 {
+    color: #b22222;
+    font-size: 2.6em;
+    font-weight: 500;
+}
+
+.main .content h2 span {
+    font-size: 2.8em;
+    font-weight: 600;
+}
+
+.animated-text {
+    position: relative;
+    height: 70px;
+    overflow: hidden;
+}
+
+.animated-text h3 {
+    color: #f7f7f7;
+    font-size: 3em;
+    font-size: 700;
+    line-height: 70px;
+    letter-spacing: 1px;
+}
+
+.animated-text h3:nth-child(1) {
+    animation: text-move 10s infinite;
+}
+
+
+@keyframes text-move {
+    0% {
+        margin-top: 0;
+    }
+    25% {
+        margin-top: -70px;
+    }
+    50% {
+        margin-top: -140px;
+    }
+    75% {
+        margin-top: -70px;
+    }
+    100% {
+        margin-top: 0;
+    }
+}
+
+
+.btn {
+    /* color: #fff;
+    font-size: 1em;
+    font-weight: 600;
+    display: inline-block;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    margin-top: 30px;
+    transition: 0.5s ease;
+    padding: 15px 20px;
+    border-radius: 11%;
+    background: linear-gradient(#5a165a, #6d2161);
+    border: 1px solid rgba(0,0,0,0.0); 
+    cursor: pointer;
+    transition: all 1s ease;
+     */
+     font-weight: bold;
+     font-family: sans-serif;
+     text-decoration: none;
+     position: relative;
+     color: transparent;
+     background-image: repeating-linear-gradient(45deg, #f1f1f1 0px, #f1f1f1 144px, gray 144px, gray 288px, #bebebe 288px, #bebebe 432px);
+     background-size: 250%;
+     background-position: 0%;
+     -webkit-background-clip: text;
+     background-clip: text;
+     -webkit-animation: stripeAnimation 3s linear infinite;
+     animation: stripeAnimation 3s linear infinite;
+     animation-play-state: running;
+     -webkit-animation-play-state: paused;
+     animation-play-state: paused;
+     font-size: 1.25em;
+     text-transform: uppercase;
+     font-weight: 600;
+     display: inline-block;
+     padding: 10px 20px;
+     text-transform: uppercase;
+     text-decoration: none;
+     letter-spacing: 1px;
+     border-radius: 2px;
+     margin-top: 30px;
+     transition: 0.5s ease;
+     padding: 10px 15px;
+     border-radius: 10px;
+     border: 2px solid rgb(255, 255, 254); 
+     cursor: pointer;
+     transition: all 1s ease;               
+}
+
+.btn:hover {
+    transform: scale(1.09);
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+}
+
+
+
+@keyframes stripeAnimation {
+    100% {
+      background-position: 165%;
+    }
+  }
+
+
+/***** HEADER *****/
+header {
+    position: relative;
+    z-index: 8000000000;
+    position: fixed;
+    background: #262626;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 135px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5x ease;
+    text-transform: uppercase;
+    font-weight: normal;
+    box-shadow: -5px -5px 10px #0d0d0d inset,
+                 5px 5px 10px #333 inset;
+   backdrop-filter: blur(20px);
+   background: rgba(39, 29, 29, 0.65);
+   height: 4em;
+   border-bottom: 0.1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* JS for navigation bar */
+/* header.sticky {
+    background: #2d0300;
+    padding: 10px 200px;
+    z-index: 90000000000;
+
+
+    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5x ease;
+    text-transform: uppercase;
+    font-weight: normal;
+    box-shadow: -5px -5px 10px #280c0c inset,
+                 5px 5px 10px rgb(62, 18, 18) inset;
+
+} */
+
+
+header .brand img {
+    /* color: rgb(253, 249, 249);
+    font-size: 1.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none; */
+
+    height: 21px;
+    align-items: center;
+    
+    
+}
+
+
+header .navigation {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 133px;
+    height: 42px;
+    width: 47%;                                                                           
+}
+
+
+header .navigation a {
+    color: rgb(255, 246, 246);
+    font-size: 1em;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 30px;
+    position: relative;
+    float: left;
+    margin: 2px;
+    height: 40px;
+    width: 110px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: arial;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 0.2s;
+}
+
+header .navigation a span {
+    color: #b22222;
+}
+
+header .navigation a span:hover {
+    color: #fff;
+}
+
+header .navigation a:hover {
+    color: rgb(242, 35, 12) ;
+                
+}
+
+/* JS for navigation bar */
+header.sticky .navigation a:hover {
+    color: rgb(155, 153, 153) ;
+                
+}
+
+body {
+    min-height: 110vh;
+}
+
+
+
+@keyframes up {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.nav-item:nth-child(odd) {
+    animation: up 1s forwards;
+}
+
+.nav-item:nth-child(even) {
+    animation: down 1s forwards;
+}
+
+
+@keyframes down {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/***** ABOUT *****/
+
+.about {
+    position: relative;
+    z-index: 2000;
+    background-color: #9A0E1C;
+    /* background: linear-gradient(to left, #556270, #ff6b6b); */
+	/* background-size: 400% 400%; */
+	width: 100%;
+	/* animation: animate-background 10s ease infinite; */
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 40px;
+}
+
+
+.section-title {
+    position: relative;
+    color: #fff;
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    transition: 0.5s ease;
+}
+
+
+.section-title:hover {
+    transform: scale(1.1);
+}
+
+
+.about-wrapper { 
+    height: 100%; 
+    width: 100%;
+    position: relative;
+    padding: 20px 0;
+} 
+
+.about-left { 
+    background: #ffffff85; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+} 
+
+ 
+.about-left-content > div { 
+    background: #9A0E1C; 
+    padding: 3rem 4rem 4rem 5rem; 
+    text-align: center; 
+} 
+
+
+.about-left-content { 
+    box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.39); 
+    -webkit-box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.39); 
+    -moz-box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.39); 
+} 
+
+ 
+.about-img img { 
+    display: block; 
+    width: 200px; 
+} 
+
+.about-img { 
+    width: 200px; 
+    height: 200px; 
+    overflow: hidden; 
+    border-radius: 50%; 
+    transition: all 0.5s ease-in-out; 
+} 
+
+
+.shadow { 
+    margin-left: auto; 
+    margin-right: auto; 
+    border-radius: 50%; 
+    width: 200px; 
+    height: 200px; 
+    position: relative; 
+    cursor: pointer; 
+} 
+
+.shadow:hover .about-img { 
+    transform: translateY(-10px); 
+} 
+
+
+.shadow:hover::after { 
+    opacity: 1; 
+} 
+
+ 
+.about-left-content h2 { 
+    font-size: 2rem; 
+    margin: 2.2rem 0 0.6rem 0; 
+    line-height: 1.2; 
+    padding-bottom: 1rem; 
+    border-bottom: 2px solid #000000; 
+    text-transform: uppercase; 
+    color: #fff; 
+} 
+
+ 
+.about-left-content h3 { 
+    text-transform: uppercase; 
+    font-weight: 300; 
+    letter-spacing: 5px; 
+    margin-top: 1.2rem; 
+    color: #fff; 
+} 
+
+.icon { 
+    background: #fff; 
+    display: flex; 
+    justify-content: center; 
+    padding: 0.8rem 0; 
+} 
+
+.icon li { 
+    list-style-type: none; 
+} 
+
+ 
+.icon li a{ 
+    background: #dd2d4a; 
+    color: #fff; 
+    width: 40px; 
+    height: 40px; 
+    margin: 0 0.5rem; 
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 1.2rem; 
+    cursor: pointer; 
+    transition: all 0.5s ease-in-out; 
+    text-decoration: none; 
+} 
+
+ 
+
+.icon li a:hover { 
+    background: #edffec; 
+    color: #000; 
+} 
+
+
+.about-right { 
+    background: #ffffff; 
+    height: fit-content;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 15px 5rem; 
+    text-align: center;  
+} 
+
+
+
+.about-right h1 { 
+    font-size: 7rem; 
+    text-transform: uppercase; 
+} 
+
+
+.about-right h1 span { 
+    color: #dd2d4a; 
+} 
+
+ 
+.about-right h2 { 
+    font-weight: 600;
+    padding-bottom: 15px;
+} 
+
+ 
+
+.about-bttns { 
+    display: flex; 
+    margin: 2rem 0; 
+} 
+
+
+.bttn { 
+    border: none; 
+    font-size: 0.9rem; 
+    text-transform: uppercase; 
+    border: 2px solid #000; 
+    border-radius: 20px; 
+    padding: 0.55rem 0; 
+    width: 130px; 
+    font-weight: 600; 
+    background: transparent; 
+    margin: 0 0.5rem; 
+    cursor: pointer; 
+} 
+
+ 
+.bttn.bttn-pink { 
+    background: #dd2d4a; 
+    color: #fff; 
+    border-color: #dd2d4a; 
+    transition: all 0.5s ease-in-out; 
+} 
+
+ 
+.bttn.bttn-pink:hover { 
+    background: transparent; 
+    border-color: #dd2d4a; 
+    color: #000; 
+} 
+
+ 
+.bttn.bttn-white { 
+    transition: all 0.5s ease-in-out; 
+    color: black; 
+} 
+
+ 
+.bttn.bttn-white:hover { 
+    background: #dd2d4a; 
+    border-color: #dd2d4a; 
+    color: #fff; 
+} 
+
+
+.about-para p { 
+    font-weight: 300; 
+    padding: 0.5rem; 
+    opacity: 0.8; 
+    line-height: 30px;
+    text-align: justify;
+} 
+
+ 
+ 
+@media screen and (min-width: 992px) { 
+    .about-wrapper { 
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr); 
+    } 
+
+    .about-left { 
+        position: relative; 
+    } 
+
+    .about-left-content { 
+        position: absolute; 
+        right: -20px; 
+    } 
+} 
+
+
+@media (max-width: 1080px) {
+    .about-left-content > div { 
+        background: #9A0E1C; 
+        padding: 20px 20px; 
+        text-align: center; 
+        width: 100%;
+    } 
+} 
+
+@media (max-width: 768px) {
+    .about-right { 
+        padding: 15px 2rem; 
+        /* margin: 15px 0px; */
+        margin-top: 15px;
+        
+    } 
+    .title {
+        padding-bottom: 0;
+    }
+} 
+
+
+/***** SKILLS *****/
+
+.skills {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0px;
+    min-height: 100vh;
+    background: url(img/piqsels.com-id-frhgm.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-bottom: 65px;
+    z-index: 1;
+    background: #114357;
+	background-size: 400% 400%;
+	width: 100%;
+	animation: animate-background 10s ease infinite;
+}
+
+.skills .title h2 {
+    margin-top: 75px;
+    margin-bottom: 33px;
+}
+
+
+.container-skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container-skills .flip-card {
+    margin: 30px;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .container-skills .flip-card-front,
+  .container-skills .flip-card-back {
+    width: 300px;
+    min-height: 350px;
+    height: auto;
+    background-color: #9A0E1C;
+    /* background-image: url("https://images.wallpaperscraft.com/image/single/cherry_ripe_wet_130316_800x600.jpg"); */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    border-radius: 25px;
+  }
+
+
+  .container-skills .flip-card:nth-of-type(1) .flip-card-front {
+    /* background-image: url(img/obrazek\ \(9\).jpg); */
+    border-radius: 63% 37% 75% 25% / 35% 35% 65% 65%   ;
+    background-color: #fff;
+  }
+
+  .container-skills .flip-card:nth-of-type(1) .flip-card-back {
+    background-image: url(img/piqsels.com-id-zzrpo.jpg);
+    border-radius: 39% 61% 40% 60% / 58% 47% 53% 42%    ;
+  }
+  
+  .container-skills .flip-card:nth-of-type(2) .flip-card-front {
+    border-radius: 45% 55% 71% 29% / 43% 51% 49% 57%;
+    background-color: #fff;
+  }
+
+  .container-skills .flip-card:nth-of-type(2) .flip-card-back {
+    background-image: url(img/piqsels.com-id-zzrpo.jpg);
+    border-radius: 44% 56% 44% 56% / 50% 53% 47% 50%   ;
+  }
+
+  .container-skills .flip-card:nth-of-type(3) .flip-card-front {
+    background-color: #fff;
+    border-radius: 40% 60% 28% 72% / 58% 53% 47% 42% ;
+  }
+
+  .container-skills .flip-card:nth-of-type(3) .flip-card-back {
+    background-image: url(img/piqsels.com-id-zzrpo.jpg);
+    border-radius: 65% 35% 62% 38% / 50% 53% 47% 50%  ;
+  }
+
+  .container-skills .flip-card-front {
+    transform: rotateY(0deg);
+  }
+  
+  .container-skills .flip-card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+  }
+  
+  .container-skills .flip-card-front::after,
+  .container-skills .flip-card-back::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+    border-radius: 15px;
+  }
+  
+  .container-skills .flip-card-front .inner,
+  .container-skills .flip-card-back .inner {
+    width: 100%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateZ(60px) scale(0.94);
+    z-index: 2;
+  }
+  
+  .container-skills .inner .icon {
+    /* width: 80px;
+    margin: 20px; */
+    color: rgb(0, 0, 0);
+    font-size: 65px;
+    margin-bottom: 20px;
+  }
+  
+  .container-skills .inner h3 {
+    margin-bottom: 8px;
+    color: #000000;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  
+  .container-skills .inner p {
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    line-height: 23px;
+    font-weight: 600;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container-skills .flip-card:hover .flip-card-front {
+    transform: rotateY(-180deg);
+  }
+  
+  .container-skills .flip-card:hover .flip-card-back {
+    transform: rotateY(0deg);
+  }
+
+
+.services .content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.title p {
+    font-size: 1em;
+    width: 80%;
+    text-align: justify;
+}
+
+
+/* Skills Icons */
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px;
+}
+
+.container .icons {
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.icons a {
+    display: inline-flex;
+    width: 85px;
+    height: 85px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 40px;
+    margin: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    color: #262626;
+    border-radius: 50%;
+    background-size: 100% 200%;
+    background-position: 0% 5%;
+    background-color: #fff;
+    transition: background-position 0.5s, color 0.5s;
+    cursor: auto;
+    transition: transform 1s;
+}
+
+.icons a:hover {
+    background-position: 0% 100%;
+    color: #9A0E1C;
+    transform: scale(1.15);
+    border-radius: 50%;
+}
+
+/***** WORK *****/
+
+.work {
+    position: relative;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+    /* text-transform: capitalize; */
+    /* overflow-x: hidden; */
+    /* padding: 100px 200px; */
+    /* margin: 0 auto; */
+    place-items: center;
+    text-align: justify;
+    font-size: 1em;
+    width: 100%;
+    color: #fff;
+    z-index: 1;
+    background-color: #2a2932;
+    /* background: linear-gradient(to right, #fc354c, #0abfbc); */
+	background-size: 400% 400%;
+	width: 100%;
+	animation: animate-background 10s ease infinite;
+    /* background: url(img/piqsels.com-id-zblne.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; */
+}
+
+
+.title p {
+    line-height: 25px;
+}
+
+
+/** WORK GALLERY **/
+
+.container-work {
+	margin-top: 40px;
+    font-family: "Raleway", sans-serif;
+}
+
+.row-work {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap; 
+}
+
+.image-work {
+	background: transparent;
+	position: relative;
+	flex: 1;
+	max-width: 460px;
+	height: 300px;
+	margin: 20px;
+	overflow: hidden;
+}
+
+.image-work img {
+	opacity: 1;
+	position: relative;
+	vertical-align: top;
+	transition: 0.6s;
+	transition-property: opacity;
+    height: 100%;
+    width: 100%;
+}
+
+.image-work:hover img {
+	opacity: 0.02;
+}
+
+.image-work .details {
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #fff;
+	width: 100%;
+	height: 100%;
+}
+
+
+.image-work .details h2 {
+	text-align: center;
+	font-size: 24px;
+	text-transform: uppercase;
+	font-weight: 300;
+	margin-top: 70px;
+	transition: 0.4s;
+	transition-property: transform;
+    opacity: 0;
+}
+
+
+.image-work:hover .details h2 {
+    opacity: 1;
+    font-weight: 750;
+	/* transform: translateY(-30px); */
+   
+}
+
+.image-work .details p {
+	margin: 30px 30px 0 30px;
+	font-size: 18px;
+	font-weight: 600;
+	text-align: center;
+	opacity: 0;
+	transition: 0.6s;
+	transition-property: opacity, transform;
+}
+
+.image-work:hover .details p {
+	opacity: 1;
+	transform: translateY(-40px);
+}
+
+.more {
+	position: absolute;
+	background: rgba(255, 255, 255, 0.8);
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+	bottom: -60px;
+	transition: 0.6s;
+	transition-property: bottom;
+}
+
+.image-work:hover .more {
+	bottom: 0;
+}
+
+.more .read-more {
+	color: #000;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.more .read-more span {
+	font-weight: 900;
+}
+
+.more .icon-links i{
+	color: #000;
+	font-size: 20px;
+}
+
+.more .icon-links a:not(:last-child) i {
+	margin-right: 20px;
+}
+
+/* Responsive CSS */
+
+@media (max-width: 1080px) {
+	.image-work{
+		flex: 100%;
+		max-width: 480px;
+	}
+}
+
+@media (max-width: 400px) {
+	.image-work .details p {
+		font-size: 16px;
+	}
+
+	.more .read-more, .more .icon-links a i {
+		font-size: 18px;
+	}
+}
+      
+
+
+/**** PROJECT PREVIEW ****/
+
+.project-preview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-preview .preview {
+    display: none;
+    padding: 2rem;
+    text-align: center;
+    background: #fff;
+    position: relative;
+    margin: 2rem;
+    width: 40rem;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.project-preview .preview.active {
+    display: inline-block;
+}
+
+.project-preview .preview img {
+    height: 10rem;
+}
+
+.project-preview .preview .fa-times {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    cursor: pointer;
+    color: rgb(133, 41, 41);
+    font-size: 4rem;
+}
+
+.project-preview .preview .fa-times:hover {
+    color: #1823c2;
+    transform: rotate(90deg);
+}
+
+.project-preview .preview h3 {
+    color: #444;
+    padding: .5rem 0;
+    font-size: 2rem;
+}
+
+
+.project-preview .preview p {
+    line-height: 1.5;
+    padding: 1rem 0;
+    font-size: 1rem;
+    color: #777;
+}
+
+
+.project-preview .preview .buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.project-preview .preview .buttons a {
+    flex: 1 1 16rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    color: #444;
+    border: 0.1rem solid #444;
+}
+
+.project-preview .preview .buttons a.first {
+    background: #444;
+    color: #fff;
+}
+
+.project-preview .preview .buttons a.first:hover {
+    background: #111;
+}
+
+.project-preview .preview .buttons a.second:hover {
+    background: #444;
+    color: #fff;
+} 
+ 
+
+
+
+/***** CONTACT *****/
+
+
+.contact {
+    position: relative;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+    place-items: center;
+    text-align: justify;
+    font-size: 1em;
+    width: 100%;
+    color: #fff;
+
+}
+
+#contact {
+
+    z-index: 1;
+    background: linear-gradient(to right, #cf1130, #680c10);
+	background-size: 400% 400%;
+	width: 100%;
+	animation: animate-background 10s ease infinite;
+}
+
+.contact h2 {
+    color: #fff;
+    margin-top: 10px;
+}
+
+
+.contact .contect {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.contact .content .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+
+.contact-form {
+    background: #fff;
+    max-width: 600px;
+    margin-top: 20px;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+    margin-bottom: 70px;
+}
+
+.contact-form h3 {
+    color: #111;
+    font-size: 1.6em;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-form .input-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contact-form .input-box input,
+.contact-form .input-box  textarea {
+    color: #111;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: 400;
+    outline: none;
+    border: 1px solid #111;
+    border-radius: 5px;
+    resize: none;
+} 
+
+.contact-form .input-box .send-btn {
+    color: #fff;
+    background: #797678;
+    display: inline-block;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    transition: 0.5 ease;
+}
+
+.contact-form .input-box .send-btn:hover {
+    background: #ab131b;
+}
+
+
+
+/* Social Media Icons */
+.social-media {
+    display: flex;
+    justify-content: center;
+}
+
+.social-media a {
+    display: flex;
+    background: #e3edf7;
+    height: 75px;
+    width: 75px;
+    margin: 0 15px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15);
+    border: 1px solid rgba(0,0,0,0.0);
+    transition: transform 0.5s;
+}
+
+.social-media a i {
+    font-size: 35px;
+    color: #777;
+    transition: transform 0.5s;
+}
+
+ .social-media a:hover {
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2), inset -4px -4px 6px -1px rgba(255,255,255,0.7), -0.5px -0.5px 0px rgba(255,255,255,1), 0.5px 0.5px 0px rgba(0,0,0,0.15), 0px 12px 10px -10px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.01);
+    transform: scale(0.94);
+}
+
+.social-media a:hover i {
+    transform: scale(0.90);
+}
+
+
+
+.social-media a:hover .fa-linkedin {
+    color: rgb(21, 18, 231);
+}
+
+.social-media a:hover .fa-github {
+    color: rgb(0, 0, 0);
+}
+
+.social-media a:hover .fa-envelope {
+    color: rgb(98, 9, 9);
+}
+
+
+
+
+/* THANKS.HTML*/
+.thanks {
+    width: 100%;
+    height: 110vh;
+    background: #262626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup {
+    max-width: 300px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+}
+
+
+
+.popup img {
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+.popup button {
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #6fd649;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/***** FOOTER *****/
+
+
+.footer {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 0px;
+}
+
+
+.footer-text {
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: 550;
+    padding-bottom: 20px;
+    color: #262626;
+}
+
+
+.wavy-footer {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    background: linear-gradient(to right, #cf1130, #680c10);
+	background-size: 400% 400%;
+	width: 100%;
+	animation: animate-background 10s ease infinite;
+}
+
+
+.waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.parallax > use {
+    -webkit-animation: moveForever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+            animation: moveForever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+    -webkit-animation-delay: -2s;
+            animation-delay: -2s;
+    -webkit-animation-duration: 7s;
+            animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+    -webkit-animation-delay: -3s;
+            animation-delay: -3s;
+    -webkit-animation-duration: 10s;
+            animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+    -webkit-animation-delay: -4s;
+            animation-delay: -4s;
+    -webkit-animation-duration: 13s;
+            animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+    -webkit-animation-delay: -5s;
+            animation-delay: -5s;
+    -webkit-animation-duration: 20s;
+            animation-duration: 20s;
+}
+
+@-webkit-keyframes moveForever {
+    0% {
+        -webkit-transform: translate3d(-90px, 0, 0);
+                transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(85px, 0, 0);
+                transform: translate3d(85px, 0, 0);
+    }
+}
+
+@keyframes moveForever {
+    0% {
+        -webkit-transform: translate3d(-90px, 0, 0);
+                transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(85px, 0, 0);
+                transform: translate3d(85px, 0, 0);
+    }
+}
+
+@media (max-width : 768px) {
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+}
+
+
+
+/***** SCROLL TO TOP BUTTON *****/
+.scrollToTop-btn {
+    z-index: 990000000000000000000;
+    position: fixed;
+    background: #9d999b;
+    color: rgb(14, 13, 13);
+    width: 45px;
+    height: 45px;
+    right: 0px;
+    bottom: 10px;
+    font-size: 22px;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 3px;
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.3 ease;
+    box-shadow: -5px -5px 10px #686363 inset,
+    5px 5px 10px rgb(150, 140, 140) inset; 
+}
+
+
+.scrollToTop-btn.active {
+    right: 20px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scrollToTop-btn:hover {
+    background-color: #262626;
+    color:   #fff;
+    box-shadow: -5px -5px 10px #0d0d0d inset,
+                 5px 5px 10px #333 inset;
+}
+
+
+
+/***** REVEAL ELEMENTS ON SCROLL *****/
+.reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+/*********** ABOUTME.HTML ***********/
+
+
+/*** MAIN ****/
+
+.aboutme-main {
+    margin: 0;
+    padding: 0;
+    display: flex;
+	justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 10000;
+
+}
+
+
+.aboutme-main-header {
+	
+    /* background: linear-gradient(to left, #833ab4, #fd1d1d, #fcb045), url(img/3r.jpg);
+	background-size: 400% 400%; */
+	width: 100%;
+	height: 100vh;
+    /* animation: animate-background 10s ease infinite; */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(img/3r.jpg);
+    position: relative;
+    min-height: 100vh;
+    background: url(img/about.jpg)no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+.aboutme-main-header h1 {
+	text-align: center;
+	color: rgb(174, 29, 29);
+	font-size: 60px;
+	margin-top: 12%;
+	margin-bottom: 2px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.aboutme-main-header h2 {
+	text-align: center;
+	color: #fff;
+	font-size: 30px;
+	margin-top: 2%;
+    margin-bottom: 10px;
+	padding-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 160%;
+    text-transform: capitalize;
+}
+
+
+@keyframes animate-background {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@media (max-width : 768px) {
+    .aboutme-main-header h1 {
+        font-size: 55px;
+        margin-top: 35%;
+        margin-bottom: 30px;
+    }
+}
+
+
+/*** TEXT ****/
+
+.aboutme-text-section {
+     /* background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(img/mesh\ \(1\).png); */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* border: 11px solid #b2bec7; */
+    margin: 0px auto;
+    padding: 0 100px;
+    display: flex;
+	justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 100;
+    /* background: linear-gradient(to right, #141e30, #243b55, #10253a, #000c40); */
+    background: linear-gradient(to right, #cf1130, #680c10);
+	background-size: 400% 400%;
+	width: 100%;
+	animation: animate-background 10s ease infinite;
+}
+
+.aboutme-text {
+    width: 85%;
+    margin-top: 30px;
+    padding-top: 30px;
+    z-index: 500;
+    line-height: 25px;
+}
+
+.aboutme-text p {
+    color: rgb(255, 253, 253);
+}
+
+.aboutme-text h2 {
+    font-size: 1.3rem;
+    color: rgb(252, 252, 252);
+    text-transform: uppercase;
+}
+
+.aboutme-text p {
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    text-align: justify;
+}
+
+
+ @media (max-width : 768px) {
+    .aboutme-text{
+        width: 100%;
+    }
+    .aboutme-text-section {
+        padding: 0 60px;
+    }
+}
+ 
+
+/**** ANIMATED CIRCLES ****/
+.circles {
+	width: auto;
+	height: auto;
+}
+
+.box-circles {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+    z-index: 100;
+}
+.box-circles li {
+	position: absolute;
+	display: block;
+	list-style: none;
+	width: 25px;
+	height: 25px;
+	background: rgba(255, 255, 255, 0.2);
+	animation: animate-circles 20s linear infinite;
+	bottom: -150px;
+	border-radius: 50%;
+}
+.box-circles li:nth-child(1) {
+	left: 86%;
+	width: 80px;
+	height: 80px;
+	animation-delay: 0s;
+}
+.box-circles li:nth-child(2) {
+	left: 12%;
+	width: 30px;
+	height: 30px;
+	animation-delay: 1.5s;
+	animation-duration: 10s;
+}
+.box-circles li:nth-child(3) {
+	left: 70%;
+	width: 100px;
+	height: 100px;
+	animation-delay: 5.5s;
+}
+.box-circles li:nth-child(4) {
+	left: 42%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 0s;
+	animation-duration: 15s;
+}
+.box-circles li:nth-child(5) {
+	left: 65%;
+	width: 40px;
+	height: 40px;
+	animation-delay: 0s;
+}
+.box-circles li:nth-child(6) {
+	left: 15%;
+	width: 110px;
+	height: 110px;
+	animation-delay: 3.5s;
+}
+@keyframes animate-circles {
+	0% {
+		transform: translateY(0) scale(0);
+	}
+	100% {
+		transform: translateY(-800px) scale(2);
+		opacity: 0;
+	}
+}
+
+/*SHAPEDIVIDERS.COM*/
+/****www.shapedivider.app****/
+/***#9A0E1C***/
+
+
+/*Main Divider - Bottom*/
+
+.shape-7776{
+    overflow:hidden;
+    position:relative;
+    }
+    .shape-7776::before{ 
+    content:'';
+    font-family:'shape divider from ShapeDividers.com';
+    position: absolute;
+    z-index: 200;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    bottom: -0.1vw;
+    left: -0.1vw;
+    right: -0.1vw;
+    top: -0.1vw; 
+    transform:scaleX(2.8);
+    transform-origin: 100% 100%;
+    animation: 15s infinite alternate shape-anim-7776  linear;
+    background-size: 100% 134px;
+    background-position: 50% 100%;  background-image: url('data:image/svg+xml;charset=utf8, <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><g fill="%239a0e1c"><path opacity=".5" d="M0 13.2v12.2l220.7 19.2L0 70.9v11.3l250-38.1L0 13.2z"/><path opacity=".5" d="M0 25.4v8.8l145.2 12.6L0 64.1v6.8l220.7-26.3L0 25.4z"/><path opacity=".5" d="M0 25.4v8.8l145.2 12.6L0 64.1v6.8l220.7-26.3L0 25.4z"/><path opacity=".5" d="M0 34.2v29.9l145.2-17.3L0 34.2z"/><path opacity=".5" d="M0 34.2v29.9l145.2-17.3L0 34.2z"/><path opacity=".75" d="M0 34.2v29.9l145.2-17.3L0 34.2z"/><path opacity=".5" d="M750 44.1l250 38.1V69.9L779.3 43.6 1000 24.4V13.2L750 44.1zM750 44.1l-250-31-250 31 250 38zM500 24.4l220.7 19.3L500 69.8 279.3 43.6z"/><path d="M500 82.2L250 44.1 0 82.2v18h1000v-18L750 44.1 500 82.2z"/><path d="M720.7 43.6L500 24.4 279.3 43.7 500 69.8zM500 30.3l164.6 14.3L500 64.1 335.4 44.5z" opacity=".5"/><path d="M720.7 43.6L500 24.4 279.3 43.7 500 69.8zM500 30.3l164.6 14.3L500 64.1 335.4 44.5z" opacity=".5"/><path opacity=".5" d="M664.6 44.5L500 30.2 335.4 44.5 500 64.1l164.6-19.6z"/><path opacity=".5" d="M664.6 44.5L500 30.2 335.4 44.5 500 64.1l164.6-19.6z"/><path opacity=".75" d="M664.6 44.5L500 30.2 335.4 44.5 500 64.1l164.6-19.6z"/><path opacity=".5" d="M1000 69.9v-5.8L854.9 46.8 1000 34.2v-9.8L779.3 43.6 1000 69.9z"/><path opacity=".5" d="M1000 69.9v-5.8L854.9 46.8 1000 34.2v-9.8L779.3 43.6 1000 69.9z"/><path opacity=".5" d="M1000 64.1V34.2L854.9 46.8 1000 64.1z"/><path opacity=".5" d="M1000 64.1V34.2L854.9 46.8 1000 64.1z"/><path opacity=".75" d="M1000 64.1V34.2L854.9 46.8 1000 64.1z"/></g></svg>'); 
+    }
+    
+    @media (min-width:2100px){
+    .shape-7776::before{
+    background-size: 100% calc(2vw + 134px);
+    }
+    }
+    
+    @keyframes shape-anim-7776 {
+      100% {
+        transform: scaleX(2.8) translateX(calc(100% - (100% / 2.8)));
+      }
+    }
+    
+       
+    
+/*Skills Divider - Top*/
+
+.shape-3666{
+    overflow:hidden;
+    position:relative;
+    }
+    .shape-3666::before{ 
+    content:'';
+    font-family:'shape divider from ShapeDividers.com';
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    bottom: -0.1vw;
+    left: -0.1vw;
+    right: -0.1vw;
+    top: -0.1vw; 
+    transform:scaleX(1.2);
+    transform-origin: 100% 0;
+    animation: 8s infinite alternate shape-anim-3666  linear;
+    background-size: 100% 67px;
+    background-position: 50% 0%;  background-image: url('data:image/svg+xml;charset=utf8, <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><g fill="%239a0e1c"><path d="M167 61zM98 62zM98 60a1 1 0 000 1 1 1 0 010 1 5 5 0 001-1l-1-1zM171 71a3 3 0 000 1v-1 1a1 1 0 000-1zM229 64l-1 1v1a7 7 0 000 1l1-2v-1zM270 62v1a6 6 0 000 1v-1-1z" fill-rule="evenodd"/><path d="M9 61l2 1a6 6 0 010-2v2a3 3 0 010 1l2 1v-1 2a21 21 0 011-2v-1 0h1v-2 1a4 4 0 010-2v1a4 4 0 011-1v-1-1 1a6 6 0 010 1 6 6 0 010 1 2 2 0 011 1v-1c0-1 0 1 0 0a9 9 0 010-2h0v3a3 3 0 011 2 7 7 0 011 1v-1l1 2 1-1c1 0 0 1 0 0v1h2v2a15 15 0 010 1c0 2 1-1 1 1v1c0 2-1-1-1-1a1 1 0 000 1 1 1 0 010 1h-1l1-1h-1v1a4 4 0 010-1v-1l-1-1v0l-1-1v4l1 1v3h1a3 3 0 010 1v-2h2a1 1 0 010-1c0-1 0 0 0 0v1a3 3 0 010-1v1s0-1 0 0a3 3 0 010 1v-1a2 2 0 010 1l1-2v1h1a4 4 0 010-2v1a15 15 0 002-1l2-4v-1-1-1c0-1 0 0 0 0v2l1-1a2 2 0 010 1l-1 1v-1a2 2 0 000 1c1 1 1 2 2 1l4-5h4l3-2a5 5 0 004-2c1-1 0-4 2-4h5l4 1h1l2 3v1a17 17 0 011-4v4c0 1 0 0 0 0v-2 1a5 5 0 010 1 6 6 0 010-2h1a4 4 0 010-1v-2 1a6 6 0 010 1 25 25 0 010 5v1a2 2 0 002 1v-1l1-2v1l1 2v-2l1 1h1v1a5 5 0 010 1h2a10 10 0 011-2c0-1 0 0 0 0v-2-1h1v2l2 1a2 2 0 010 1 3 3 0 010 1 5 5 0 010-2c1-1 1 1 1 2v-1 1h1a2 2 0 000-1h0v1-1a3 3 0 010-1 3 3 0 000-1 1 1 0 010-1h1v-1 0c0-1 1-2 1 0s-1 0-1 1c0 2 1 1 1 1a7 7 0 010 1h1v-1-1l1 2v-1a3 3 0 010 1v-1-1c0-1 0 0 0 0v-1l1 1v-2 2a4 4 0 000-1v-1l1 1v0a11 11 0 010 2v-2 1s0-1 0 0a3 3 0 011 0v-1-1l1-1v-1c0-1 0 0 0 0v0l1 1v1l1-5v1c0 1 0 0 0 0v1l1-1v-1-1 4l1-4v0l1-1v-2 1a5 5 0 010 1 6 6 0 010-2 4 4 0 011-1v-2 1a6 6 0 010 1 25 25 0 011 5v2h1v0a4 4 0 010 1 7 7 0 010 1 17 17 0 011-2v0l-1-1a1 1 0 011-1v-1h1v3l1-2v1h2v3c1 2 1-1 1 1a13 13 0 001-1 4 4 0 010-1v1l2-4 2-4c2-2 3-4 4-3a4 4 0 013 2l2 1 2-3c1-1 1-4 3-5l3-2a3 3 0 011-2v2a4 4 0 011 0v-1-1-1l1 2v-1l1-2v3l1-2v2l1-1v2a6 6 0 001-2l1-2 1 2v0a5 5 0 012-2l3-1a11 11 0 010-2 15 15 0 010-2 8 8 0 010-2l1-1v1h1s1-1 1 1l-1-1v2l1-1v1a8 8 0 010 2l1-1v-1-2a3 3 0 010 2 11 11 0 002-2c0-3 2-6 3-4l4 8 3 9c1-1 2 2 3 4v-1a8 8 0 010 2l1 1v-2a6 6 0 010 3l1 1v-3-1c1 0 1 2 2 1l-1-2c0-1 0 1 0 0l1-2 1-3v2l-1 1 1 1a1 1 0 010 1c-1 1-1-3-1-2a8 8 0 000 2 5 5 0 000 1v-1c1 1 1 5 2 3l-1-1a3 3 0 011-2 5 5 0 011-2v-1a7 7 0 010 3c0 1-1-1-1 1a5 5 0 000 1h1a8 8 0 011 3 4 4 0 010 1l-1 2v2l1 4v-2l1 2v-2 1a3 3 0 011-1v-1-1h1v1l1-1v1l1 1a9 9 0 010 2 6 6 0 010 1 5 5 0 01-1 1l1-1h-1c0 1 0 1 0 0a1 1 0 010-1l-1 1v-1 3l1 1c0-1 0-1 0 0l1-2a2 2 0 010-1h1v1a14 14 0 011-3l-1 2 1 1v-2 1a9 9 0 010-1l1-2a11 11 0 010 1v-2 1a6 6 0 010 1 3 3 0 010 1 3 3 0 001-2l-1-2a14 14 0 011 2 4 4 0 010 1l1 1v-1a3 3 0 010-1s0 1 0 0v-1a6 6 0 010 2 4 4 0 010 1v1c1 0 0-6 1-5v8-1c0-1 0-2 1-1a5 5 0 010 1v-1a7 7 0 010-3h1c0-1 0 0 0 0v-1 5l1-2v2a3 3 0 012 3 7 7 0 013-1c4-1 3 0 4 2a5 5 0 000 1 13 13 0 011 2 2 2 0 001-1s0 1 0 0v-2-3c1-1 1 3 1 1l1-2v3l-1 2c1 1 1-2 2-1a5 5 0 010 2h-1a3 3 0 000 1c1 1 1-1 1 1a1 1 0 010 1l-1-1c0 3 2 1 2 4a9 9 0 01-1 3l-1 1v-2-2-3l-1 2v2a43 43 0 011 3v1l1 1v-1 1l2-1a4 4 0 00-1-1v-3 1a3 3 0 011-3v1l1-1v1s1-1 1 1-2-1-1 2a6 6 0 000 1 9 9 0 001-2 10 10 0 010-3 7 7 0 011 2v-1a4 4 0 000-1v-1l-1-1-1 1v-5 4c-1 2-1 2-2 0v-1c0-5 2-5 3-4 0 0 0-1 0 0v1c0 2 1 0 1 0l1-1 1-1 1-1v-1 2l1-2v3c0 1 0 0 0 0l1-5 1-3a4 4 0 010 1c1-3 0-4 2-5a22 22 0 002-2l4 1c1-1 2-1 2 1s0 9 2 10 1 2 3 1l3-3c2-3 1-4 3-4s3 1 4 4v-1a4 4 0 010 1s0-1 0 0v2a9 9 0 011-1s0-1 0 0l-1 1a7 7 0 001 1v1a11 11 0 010-2v2h1v-1-1-2 1a5 5 0 010 1 6 6 0 011-3v1a4 4 0 010-1v-1-1 1a7 7 0 010 1 25 25 0 010 5v1h2v-1l1-1 1 2a7 7 0 011-1v1h1l5-6 4 6 5 6 4 3h1v-1c0-1 0 1 0 0a7 7 0 010-1v2h2v-1 1a9 9 0 000-2 3 3 0 010-1l1-1v-1-1s0-1 0 0v3l1-3c0-1 0-2 0 0v2a6 6 0 010 1l1 1v-1 0l1-1-1-1c1-2 1 1 1 2v-1a2 2 0 010 1v-1h1c0-3-1 0-1-1v-1l1-1c1 0 0 0 0 0v1a1 1 0 010 1 1 1 0 011 0v-1l-1-1a1 1 0 011-1v2c0-1 0 0 0 0h1l1-1v-1a4 4 0 000 1c0 1 0 0 0 0v-3 3a1 1 0 001-1v-1 1c0 1 0 1 0 0l1-5v4l1-1c1 0 0-1 0 0v-2-1 1h1l-1 3v-1 1l1-4v-1 1a4 4 0 010 1 1 1 0 000 1l1-1v-2c0-1 0 0 0 0v-2c0-1 0 0 0 0a5 5 0 010 1 6 6 0 011-2v1a4 4 0 010-1v-1-2 1a6 6 0 010 2 25 25 0 010 5v1a3 3 0 011 2l-1-1v1a11 11 0 012-2v-1l1-1a3 3 0 011 1l1-1h2l1-1h1v-5c1-1 1 1 1 2l-1 1 1-1 1-1c1 0 0 0 0 0v-1c0-1 0 0 0 0v-1l1 2v-1l1-3-1 3 1 1c0 1 0 0 0 0l1-2v1l1 1-1 1h1a6 6 0 001-2l1-2 1 2h-1l1 1v-1h1s0-2 1-1v1l-1 3h1v1l-1 1 2-1 1-1v1a6 6 0 011 0 11 11 0 004 0 6 6 0 013 0 6 6 0 010-2l1-2a4 4 0 00-1-2v-1a6 6 0 010-2v-1l1 4v-1-1 1l1-1 1 2h1v1c1 0 0 0 0 0v-1 2l1-1 1 1v-1a12 12 0 000 2l1 1 1-1 2 6v1c1-1 1 0 1 1l-1-1 2 4v-3-2 3l1-2a7 7 0 010 3l-1 2v1a4 4 0 000 1 5 5 0 011-1v-1l1 1-1-5 1-1 1 1v-2c0-1 0 1 0 0v-2c1-2 1-5 2-3l-1 1 1 1-1 1 1 1a1 1 0 010 1c-1 1-1-3-1-2a8 8 0 000 2 5 5 0 000 1v-1c1 1 1 4 2 3l-1-2a3 3 0 010-1 5 5 0 012-2h1v-1a7 7 0 01-1 3s0-1 0 0a5 5 0 000 2l1-1a8 8 0 011 3 2 2 0 010 1h6l4-1h2V42v28c4-7 10-7 10-7l1 1a6 6 0 010-2l1 1v-1 2c0-1 0 0 0 0a3 3 0 010 1l1 1v-1l1 1v-1-1 2l1-2v1a3 3 0 010 1h-1 1v-2-1-2 1a3 3 0 010 1l1-1a4 4 0 010-1v-1-2l1 1a6 6 0 01-1 1v1a6 6 0 011 1l1-1h-1a9 9 0 011-1v-1a4 4 0 010 1v2a3 3 0 011 2 7 7 0 010 1v-1l1 1v2l1-1c0-1 0 0 0 0h1l1 1v2c0 1 0 0 0 0v-1l1 2v1a3 3 0 010-1v1c0 3 0-1-1 0a2 2 0 000 1v-1 1h-1a3 3 0 011 0l-1-1-1-1v-1 1l-1 2h1v3a2 2 0 010 1v1h1s0-1 0 0v-1a3 3 0 010 1v-1h1l1-1v0a1 1 0 010-1 1 1 0 010 1l1-1-1 1a3 3 0 010 2l1-1v-1a4 4 0 000 1l1-1a5 5 0 010-1v1a15 15 0 002-1c0-1 0 0 0 0l2-5v-1-1c0-1 0 0 0 0v1h1a2 2 0 010 1h-1c-1-1 1 0 0 0a2 2 0 000 1c2 1 1 2 3 1s2-5 3-5h4c2-1 2-3 4-3a5 5 0 003-2c1-1 0-3 2-3h5l4 1h1l2 3v1a2 2 0 000-1 16 16 0 011-3v3a6 6 0 010 1v-2c0-1 0 0 0 0a5 5 0 010 1 6 6 0 011-2v1a4 4 0 010-1v-1-1a6 6 0 010 2 25 25 0 010 5 2 2 0 002 1 1 1 0 010-1l1-1 1 2v-1h1v1h1c1 0 0 0 0 0a5 5 0 010 1 18 18 0 002 0 9 9 0 011-2s0 1 0 0v-1-2c0-1 0 0 0 0h1v3l2 1a2 2 0 010 1 5 5 0 010-2l1 2v-1 1h1v-1c0-1 0 0 0 0v1a3 3 0 010-2h1a1 1 0 01-1-1h1a2 2 0 010-1v-1 1c0-1 1-2 1 0v1 1a4 4 0 010 1 2 2 0 011 0v-1-1c0-2 1 0 1 1v-1-1-1h1v2a4 4 0 001-1l-1-1a1 1 0 010-1l1 1v1a11 11 0 010 1v-1 1l1-1-1 1a3 3 0 011 0v-1 1a1 1 0 010-1v-1-1h1a4 4 0 000 1c0 1 0 0 0 0v-3 3a1 1 0 001-1v-2 2l1-5v3l1-2v-1 3c0 1 0 0 0 0s0 1 0 0l1-4v1a4 4 0 010 1 1 1 0 000 1v-1-2l1-1v-2 1a5 5 0 010 1 6 6 0 011-2v-1-2 1a6 6 0 010 2 25 25 0 010 4v2a2 2 0 010 1h1v0a4 4 0 011 1 7 7 0 010 1 17 17 0 010-2v-1a1 1 0 010-1l1-1 1 2v-1h1v1h1c1 0 0-1 0 0v2l1 1v-2a15 15 0 010 2c0 1 1-1 1 1a13 13 0 001-2l1-3 2-4c1-2 3-4 5-4a4 4 0 013 2l3 2 1-4 3-4 4-3a3 3 0 010-1v1l1 1a4 4 0 010-1v-1l1 1v-2h-1 1v1l1-1 1-2-1 3 1 1 1-3-1 3 1-1v2h1c1 0-1 0 0 0a6 6 0 001-2v-2c1 0 2 0 1 1v1h1a5 5 0 011-2l3-1v-1 1l1-1a11 11 0 01-1-2 15 15 0 010-2 8 8 0 010-2l1-1 1 2v-1l2 1h-1v1a8 8 0 011 2v-1h1v-2a3 3 0 010 2 11 11 0 001-3c1-2 3-5 4-3l3 7c1 0 3 10 4 9l2 5 1-1a8 8 0 010 2s0-2 1-1a6 6 0 010 2v-1l1-1v-1l1 2-1-2 1-1v-2l1-3v5a1 1 0 010 1s0-4-1-3a8 8 0 000 2 5 5 0 000 1h1l1 2v-1a4 4 0 010-1 5 5 0 011-2h1v-1a7 7 0 01-1 3h-1a5 5 0 001 2l1-1a8 8 0 010 3 4 4 0 010 2l-1 2 1 2c0 1 0 4 1 3v-1-1l1 2a3 3 0 010-1 3 3 0 010-1h1v-1-1l1 2s0-1 0 0v-1l1 1v1a9 9 0 010 1v1c-1 0 0 0 0 0a9 9 0 010 1 5 5 0 010 1v-1a1 1 0 010-1l-1-1v3a1 1 0 010 1l1 1a1 1 0 010-1l1-2s0-1 0 0h1a13 13 0 010-3v3a15 15 0 010-1c0-1 0 0 0 0a3 3 0 010 1h1a7 7 0 010-1v-3a11 11 0 010 2v-1-1a6 6 0 010 2 3 3 0 010 1 1 1 0 011 0 3 3 0 000-3v-2a14 14 0 011 3v-1a4 4 0 010 1v0a3 3 0 010-1h1a6 6 0 010 1 4 4 0 010 1v1h-1l1-4v7a1 1 0 010-1l1-1a5 5 0 010 1v-1a7 7 0 010-2l1-1 1-1-1 4v1h1v-1 2a3 3 0 012 2 7 7 0 013-1c4-1 3 0 4 2a4 4 0 000 1 14 14 0 012 2h1l-1-2 1-1v-2l1 1v-2l1 2-1 2c0 2 1-1 1-1a5 5 0 010 2c0 1 0-1 0 0a3 3 0 000 2c0 1 1-1 1 1a1 1 0 010 1l-1-1 1 3a9 9 0 010 3l-1 1v-1l-1-2v-3 2h-1l1 1a40 40 0 011 4c0 2 0 2 1 1l1-1v-3l-1 2v-2a3 3 0 011-2l1 1v-1l1 1h1c0 3-2 0-2 2a6 6 0 000 1 9 9 0 002-2 10 10 0 010-3 7 7 0 010 3l1-1a4 4 0 000-1l-1 1v-3l-1-1v-2l-1-1v4c0 2-1 1-1 0l-1-1c0-5 2-5 3-5l1 1-1 1h1l1-1 2-1v-1-2l1 2v-2 3h1l1-4a2 2 0 010-1v-2a4 4 0 010 1l2-5a22 22 0 003-3l4 2c1 0 1-2 2 1s0 8 1 9 2 2 3 1l3-3c2-3 1-4 3-4s3 1 4 4l1-1a4 4 0 010 1h-1a3 3 0 000 1l1 2a9 9 0 010-1c0-1 0-1 0 0 0 0 0-1 0 0v2h1a11 11 0 010-1v1a3 3 0 000 1v-2-1-2l1 1c1 0 0 0 0 0a5 5 0 010 1 6 6 0 010-2l1-1v-2 1a6 6 0 010 2 25 25 0 010 4v2h2v-1l1-1c1 0 0 0 0 0v2h1a7 7 0 010-1h1v1a2 2 0 001-1l5-6 4 6 5 7 4 2h1a8 8 0 010-1v2h1v-1a2 2 0 011 1v-2 1a9 9 0 000-2 3 3 0 010-1h1v-2-1 0c0-1 1-2 1 0s0 0-1 1c0 2 1 1 1 1a7 7 0 010 1v1a2 2 0 010 1l1-2v-1-1l1 2s0-1 0 0v-1-1c0-1 0 0 0 0v-1l1 1v-2 0l1 1-1 1h1v-1a2 2 0 010 1 5 5 0 010-1v1s0-1 0 0h1v-1-1l1-1v1a4 4 0 00-1 0v1l1-1v-3 1l1 1v-4c1-1 1 0 1 1v1l1 1v-3-1 4l1-4v0l1-1v-2 1a5 5 0 010 1 6 6 0 010-2 4 4 0 011-1v-1-1 1a6 6 0 010 1 25 25 0 010 5v2a3 3 0 010 1s0-1 0 0a11 11 0 012-2v-1l1-1a3 3 0 010 1l2-1c0-1 0 0 0 0h2v-1h1l1-5v3l1-1v-1h1v-1h-1l1-1v2l1-1 1-2-1 3h1l1-2-1 2 1-1v2 1h1v-1a6 6 0 001-1l1-3v3l1-1h1v-1 4c0 1 0-1 0 0v2h2a2 2 0 010-1l1-1v1a6 6 0 011 0 11 11 0 004 0 6 6 0 012 0 6 6 0 011-2v-2a4 4 0 000-1l-1-2a6 6 0 011-2v3l1-1v-1 1l1-1 1 2v1h1c0 1 0-1 0 0v1l1-1v1l1-1a13 13 0 000 2v1h2l2 6 1 1-1-1 1 4v-2l1-3v3c1 0 0-2 1-1a7 7 0 01-1 3v2a1 1 0 010 1 4 4 0 010-1v-1h1s0 2 1 1l-1-5h1v-1s1 3 1 1l-1-2h1v-2l1-3v3c0 1 0 0 0 0v2c0 1 0-3-1-2a8 8 0 000 2 5 5 0 000 1h1l1 2v-1a3 3 0 010-2 5 5 0 011-1l1-1c1 0 0-1 0 0a7 7 0 01-1 3h-1a5 5 0 001 1h1a8 8 0 010 3 2 2 0 010 1h7l4-1h2v-1c4-7 9-7 9-7l2 1a6 6 0 011-2v2c0-1 0 0 0 0a3 3 0 010 1l1 1 1-1v1a19 19 0 010-2v2l1-2v1a4 4 0 010 1v-2-1-2 1h1a3 3 0 010 1v-1a4 4 0 010-1v-1-2l1 1a6 6 0 01-1 1v1a6 6 0 011 1l1-1h-1a9 9 0 011-1v-1a4 4 0 010 1v2a3 3 0 011 2 6 6 0 010 1l1-1v1l1 2v-1c0-1 0 0 0 0h2v3h1v-1a15 15 0 010 2l1 1v-1 1c0 3-1-1-2 0 0 1 0 0 0 0v0l-1-1h-1v-1 6a2 2 0 010 1v1h1s0-1 0 0v-1a3 3 0 011 1v-1c0-1 0 0 0 0a3 3 0 011 0v-1 0a1 1 0 010-1h1a1 1 0 010 1v-1 1h-1 1a3 3 0 010 2v-1l1-1v1-1h1a4 4 0 010-1v1a16 16 0 001-1c0-1 0 0 0 0l2-5v-1-1c0-1 0 0 0 0h1v1c1 0 0 0 0 0a2 2 0 010 1s0 1 0 0a2 2 0 000 1c1 1 0 2 2 1s3-5 4-5h3l4-3a5 5 0 003-2c1-1 1-3 3-3h4l5 1c0-1 0 0 0 0 1 0 1-1 3 3v1a2 2 0 000-1 16 16 0 010-3v2c0-1 0 0 0 0h1a5 5 0 010 1 6 6 0 010-2v1a4 4 0 010-1v-1l1-1c1 0 0 0 0 0a6 6 0 01-1 2 1 1 0 011 0 25 25 0 010 5 2 2 0 002 1v-1-1h1v2h1v-1s0 1 0 0v1h2a5 5 0 010 1 18 18 0 002 0 9 9 0 010-2s0 1 0 0v-1-2h1l1 3 1 1a2 2 0 010 1h1a5 5 0 010-2v2h1v-1 0c0-1 0 0 0 0v1a3 3 0 011-2s0 1 0 0v-1a2 2 0 010-1v-1 4c1 1 1-2 1-3s0-2 0 0v2a5 5 0 011 0 4 4 0 010 1 1 1 0 010-1v1l1-1v-1 1l1-1c0-2-1 1-1-1l1-1v0l1 2v-1 1a4 4 0 000-1v-1a1 1 0 010-1v2a11 11 0 010 1v-1l1 1v-1 1-1 1a1 1 0 010-1l1-1v-1s0-1 0 0a4 4 0 000 1c0 1 0 0 0 0l1-3v3a1 1 0 000-1v-2 1l1 1v-5 3l1-1v-1 1l1-2v0l-1 3h1s0 1 0 0v-4 2s0-2 1-1-1 1-1 1l1-2v1a4 4 0 010 1 1 1 0 000 1v-1-2-1-2 1h1a5 5 0 010 1 6 6 0 010-2v-1l1-2v1a6 6 0 01-1 2 25 25 0 011 4v2a2 2 0 010 1h1v0a4 4 0 010 1 7 7 0 010 1 17 17 0 011-2l-1-1a1 1 0 011-1v-1h1v2l1-1v1h2v1l1 2v1a13 13 0 001-2l2-3 2-4 4-4a4 4 0 013 2l3 2c1 0 0-3 2-4s1-3 3-4l3-3a3 3 0 010-1c1-1 1 1 1 1v-1l1 1v-2s0 1 0 0c0 0 0-1 0 0 0 0 0 2 1 1v-1l1-2-1 3h1v1l1-3-1 3 1-1 1 1-1 1h1a6 6 0 001-2l1-2 1 1-1 1h1a5 5 0 012-2l2-1v-1l1 1v-1a11 11 0 01-1-2 15 15 0 010-2 8 8 0 010-2l1-1 1 2v-1l2 1h-1v1a8 8 0 011 2l1-1v-2a3 3 0 010 2 11 11 0 001-3c1-2 3-5 4-3l3 7s3 10 4 9l3 5v-1a8 8 0 010 2l1-1a6 6 0 010 2l1 2-1-3 1-1v-1l1 2-1-2 1-1v-2l1-3v2l1 1-1 1 1 1a1 1 0 01-1 1s0-4-1-3a7 7 0 000 2 4 4 0 000 1h1l1 2v-1a4 4 0 010-1 5 5 0 011-2h1v-1a6 6 0 01-1 3s0-1 0 0a5 5 0 000 2l1-1a8 8 0 011 3 4 4 0 01-1 2l-1 2 1 2c0 1 0 4 1 3v-1 1l1-2v2a3 3 0 010-1 3 3 0 010-1h1v-1-1l1 2s0-1 0 0l1-1v1l1 1a9 9 0 010 1v1h-1a6 6 0 010 1 5 5 0 010 1v-1a1 1 0 010-1v-1l-1 2v-2 4l1 1a2 2 0 010-1l1-2s0-1 0 0h1a14 14 0 010-3v3a15 15 0 010-1c0-1 0 0 0 0h1a3 3 0 010 1 9 9 0 010-1c0-2 0-4 1-3a10 10 0 01-1 2l1-1v-1 1a6 6 0 010 1 3 3 0 010 1 3 3 0 000-3v-2a14 14 0 011 3v1h1a2 2 0 010-1s-1 1 0 0c0-1 0 0 0 0v-1a6 6 0 010 1 1 1 0 010 1 4 4 0 010 1v-4 7h1a5 5 0 010-1v-1a5 5 0 010 1h1v-1h-1a7 7 0 011-2v-1l1 1v-1l-1 3v1h1v-1 2a3 3 0 012 2 7 7 0 013-1c4-1 3 1 4 3a4 4 0 001 1 14 14 0 011 1h1l-1-2 1-1v-2l1 1v-2l1 2-1 3 1-2a5 5 0 010 2c0 1 0-1 0 0a3 3 0 000 2c0 1 1-1 1 1a1 1 0 010 1l-1-1 1 4a9 9 0 010 2l-1 1v-1l-1-2v-3 2h-1l1 1v2l1 2c0 2 0 2 1 1l1-1v-3l-1 2v-2a3 3 0 011-2l1 1v-1l1 1h1c0 3-2 0-2 2a6 6 0 000 1 9 9 0 002-2 10 10 0 010-3 7 7 0 010 3l1-1a4 4 0 000-1l-1 1v-3l-1-1v-2c0-1 0-2-1-1v4c0 2-1 1-1 0l-1-1c0-5 2-5 3-5l1 1-1 1h1l1-1 2-1v-1-1l1 1v-2 3h1l1-4a2 2 0 010-1v-2a4 4 0 010 1l2-5a22 22 0 003-3l4 2c1 0 1-2 2 1s0 8 1 9 2 2 4 1l2-3 3-4c1 0 3 1 4 4l1-1a3 3 0 010 1 3 3 0 000 1v1a7 7 0 010-1l1 1h-1v1a7 7 0 001 0v1a11 11 0 010-1v0l1-1v-2 1a5 5 0 010 1 6 6 0 010-2 4 4 0 011 0v-1-2 1a6 6 0 010 2 25 25 0 010 4v2h2v-1l1-1 1 2a7 7 0 010-1h1v1a2 2 0 001-1l5-6 4 7 5 6 4 2h1v-1 2h1v-1a2 2 0 010 1h1v-2 1a9 9 0 000-1 3 3 0 010-2v-2h1v-1 1s1-3 1-1 0 0-1 1c0 2 1 1 1 1a7 7 0 010 1v1a2 2 0 010 1l1-2v-1-1l1 2s0-1 0 0v-1-1c0-1 0 0 0 0v-1l1 1v-2 2h1v-1a2 2 0 010 1 7 7 0 010-1v1s0-1 0 0h1v-1-1l1-1-1 1v1l1-1v-2c0-1 0 0 0 0v0l1 1v1l1-5v1c0 1 0 0 0 0v2l1-1v-1-2 4l1-4v0l1-1v-2 1a5 5 0 010 1 6 6 0 010-2 4 4 0 011-1v-2 1a7 7 0 010 1 25 25 0 010 5v2a3 3 0 011 1 11 11 0 012-2l1-2v1l1-1h1c0-1 0 0 0 0h1l1-1 1 1 1-6v3l1-1v-1s0 1 0 0v-1l1-1v2l1-1c0-1 0-3 1-2s-1 2-1 3c1 0 1-3 2-2s-1 3-1 3l1-1v1a6 6 0 001-1l1-2 1 1v1h1v-1l1-1v4c1 1 0 0 0 0v2h1a2 2 0 011-1v-1 1a6 6 0 012 0 11 11 0 004 0 6 6 0 012 0 6 6 0 010-2l1-2a4 4 0 000-1l-1-2a6 6 0 011-2v3c0 1 0-1 0 0l1-2v1l1-1 1 2c0 1 0 0 0 0v2h1v-1 1h1v1l1-2a12 12 0 00-1 2l1 1v1l1-1s1-1 3 6l1 1-1-1 1 4v-2c0-1 0-3 1-2s-1 3 0 2v-1a7 7 0 010 3l-1 1 1 1a1 1 0 010 1v-2h1v-4h1v-1s0 3 1 1l-1-2h1v-2l1-3v3c0 1 0 0 0 0v2l-1-2a7 7 0 000 2 4 4 0 000 1h1l1 2v-1a3 3 0 010-1 5 5 0 011-2c0-1 0-1 0 0l1-1a7 7 0 01-1 3h-1a5 5 0 000 1h2a8 8 0 010 3 2 2 0 010 1h7l4-1h2V0L0-2v70c4-7 9-7 9-7zm12 10v-1 1zm0 2v-1 1zm0-3v0zm0 5zm0-4l1-1-1 1zm1 0s0 1 0 0a2 2 0 010 1v-1zm1 2h-1v-1h1c0-1 0 0 0 0a1 1 0 010 1zm0 0v0c0-1 0-1 0 0zm167 7v-1 1zm0-1v-1s1 1 0 0zm164-7zm0 2h0zm1-2v0zm0 5v-1 1zm0-4v-1 1zm0 0v-1 1h0zm1 1v-1 1zm1 0v0l-1 1v-1h1c0 1 0 0 0 0zm167 7v-1 1zm0-1zm163-8zm1 2zm0-2v0zm0 5v-1 1zm0-4v-1 1zm1 0h-1l1-1v1zm0 1v-1 1zm1 0v1h-1 1v-1c0 1 0 0 0 0zm167 7v-1 1zm0-1zm130-31h1l-1-1v1zm-1 1l1 1a3 3 0 010 2l-1-2 1-1zm-8-6l1-1-1 1zm-5 5l1 2-1-2zm-1 6h1v2a3 3 0 010-2zm0-3v-1 1zm-1-1a1 1 0 01-1 1l1-1zm-2-2l1 2v-2zm-3 13a2 2 0 010-1h-1l1-2 1-1a3 3 0 010 1l-1 1v2zm2-3l-1 1v1l-1-1a3 3 0 011-1h1zm-3-5h1v-1a3 3 0 011 1v1l-1-1v2c0 1 0 0 0 0l-1-2zm0 5l1-1v1a3 3 0 01-1 1h-1l1-1zm0-8a3 3 0 010 1v-1zm-1 2zm-3-10l2-1v-1 4l-1-2h-1zm1 4a7 7 0 010-2h1l-1 1 1 1v1s0-1 0 0l-1-1v1l-1 1 1-2zm-2-5h0zm0 3h1v-1a2 2 0 010 1v1l-1 1a3 3 0 010-2zm0 12v-1-2a15 15 0 010-2 8 8 0 010-2l1-1 1 2v-1s1-1 1 1l-1-1v2l1-1v3l1 1h-1s0-1 0 0v1l-1 1 1 1-1 1s1 0 0 0v1l-1 1v2l-1-1 1-1a3 3 0 000-1l-1-1c0-1 0 0 0 0h1v-2 1l-2-1h1zm-5-9l1-1-1 1zm-14 17v-1a1 1 0 010 1zm0-8a9 9 0 010-1h1l-1 1zm0 3v0zm0 2a16 16 0 010-3v3a4 4 0 010 2v-1zm-2-2a3 3 0 011 0v-1a6 6 0 010 1c0 1 0 1 0 0h-1zm0 3a9 9 0 011-1s0-1 0 0l-1 1zm0-2v-1a4 4 0 010 1s0-1 0 0v1a5 5 0 010 1v-1c0-1 0 1 0 0a9 9 0 010-1zm-2-3a9 9 0 010-1v1zm-1 4h1-1zm0 2a16 16 0 010-4v3a4 4 0 010 2v-1zm-1-3v-1a6 6 0 010 2v-1s0 1 0 0zm0 3a9 9 0 010-1v1zm-1-2v-1a3 3 0 010 1v1a5 5 0 010 1v-1c0-1 0 1 0 0a9 9 0 010-1zm-2 7h1l-1-2 1 1-1 1zm1-7v-2 2zm-1 4a8 8 0 010-3l1 1v-1 2a2 2 0 010-1v2l-1-1v1a9 9 0 010-1c1-1 0 0 0 0v1zm0 1v-2a6 6 0 010 2zm-4-2v2a6 6 0 010-2zm-2 8v-1 2s0 1 0 0v-1zm-27-6c0 1 0 1 0 0zm1-7v-1a9 9 0 010-1v2zm-1 3h1c0 1 0 0 0 0h-1zm0 2a16 16 0 010-3v3a4 4 0 010 1v-1zm-1-2a3 3 0 010-1v-1a6 6 0 010 2zm0 2a9 9 0 010-1c0 1 0 0 0 0v1zm-1-2v-1a3 3 0 010 1v1a5 5 0 010 1v-1s0 1 0 0a9 9 0 010-1zm-1-11a4 4 0 010 1v-2zm-1 9v-1a9 9 0 010-1v2zm0 3v0zm-1 2a16 16 0 011-3v3a4 4 0 01-1 1v-1zm-1-2a3 3 0 010-1l1-1a6 6 0 010 2h-1zm-11-2v-1c0 2-1 2-1 1zm-7-16v0zm0 8v0zm-10 3c1-1 1 2 1 3l-1-3zm-5 9l1 1-1-1zm1-2c0 1-1 0 0 0l-1-1c0-2 1 0 1 1zm-2-1v3s0-3 1-2a8 8 0 010 3l-1-1c-1 0 0 0 0 0v-3zm-2 0c1-1 1-1 1 1 0 0 0-1 0 0l-1 1a12 12 0 010-2zm-1 2c0-2 1-3 1-1v1l-1 2a6 6 0 010-2zm-9-3a4 4 0 011 3l-1 1v-4zm-1-5v1l-1 1 1-2zm-1 5h1l-1 1 1 1-1-2zm-5-5a10 10 0 010-1h1l-1 1zm0 3v0zm0 2a16 16 0 010-3v3a4 4 0 010 1s0 1 0 0v-1zm-2-5h0zm-2 1a9 9 0 010-1c0-1 0 0 0 0v1zm-1 3l1 1-1-1zm0-6a9 9 0 010 3c0 1 0 0 0 0v-3zm-1 7l-1 2 1-2zm0-1v-1a6 6 0 010 1c0 1 0 1 0 0zm-5-31v1l-1-2zm-1 2v1a3 3 0 010 1v-2zm-8-7s0-1 0 0zm-6 6l1 2-1-2zm-1 2l1-1-1 1zm-8-4h-1v-1h-1v1a7 7 0 010-3h1l-1 1 1 1v1h1zm-1-5l1-2-1 2v0l-1 1 1-1zm-2-4h0zm0 3v0zm-1 4l1-1v-1a2 2 0 010 1v3a3 3 0 01-1-2zm-5 2l1-1-1 1zm-30 31s0-1 0 0zm-5-5c0 1 0 1 0 0zm1-7v-1a9 9 0 010-1v2zm-1 3h1c0 1 0 0 0 0h-1zm0 2a16 16 0 010-3v3a4 4 0 010 1v-1zm-1-2a3 3 0 010-1v-1a6 6 0 010 2zm0 2a9 9 0 010-1c0 1 0 0 0 0v1zm-1-2v-1a3 3 0 010 1v1a5 5 0 010 1v-1 1a9 9 0 010-2zm-2-2v-1a9 9 0 010-1v2zm0 3v0zm-1 2a16 16 0 011-3v3a4 4 0 01-1 1v-1zm-1-2a3 3 0 010-1l1-1a6 6 0 010 2h-1zm0 3a7 7 0 010-2l1 1h-1v1zm0-3v-1a3 3 0 010 1v1a5 5 0 010 2v-2l-1 1a9 9 0 011-2zm-2 7s0 1 0 0v-1 2zm0-7v-2l1 1-1 2v-1zm-1 4a8 8 0 011-3v2c0-1 0 0 0 0v1a8 8 0 010-1c0-1 0 0 0 0l-1 1zm0 1v-1a6 6 0 010 1zm-3-1c0-1 0 0 0 0l-1 1a6 6 0 010-1zm-2 1h0zm-1 7l1-1c1 0 0-1 0 0l-1 1s0 1 0 0v-1zm-2-9a9 9 0 010 3c0 1 0 0 0 0v-3zm-1 7v0zm-1 0v0zm-1 1v1a7 7 0 010-2v1zm0-4v2-2zm-1 0s0 1 0 0v1a1 1 0 010-1zm-1 1v1s0 1 0 0a2 2 0 010-1zm-6 4v-1a1 1 0 010 1zm0-8v-1a9 9 0 010-1v2zm0 3v0zm0 2a16 16 0 010-3v3a4 4 0 010 1s0 1 0 0v-1zm-2-2a3 3 0 011-1v0a6 6 0 010 1c0 1 0 0 0 0h-1zm0 3a9 9 0 011-1c0-1 0-1 0 0l-1 1zm0-3s0-1 0 0v2a5 5 0 010 1v-1c0-1 0 1 0 0a9 9 0 010-2zm-2-2a9 9 0 010-1c0-1 0 0 0 0v1zm-1 3l1 1-1-1zm-1 0c0-1 0 0 0 0v-1a6 6 0 010 1c0 1 0 0 0 0zm-32 12s0-1 0 0zm-1 1v0zm-1-2c0-1 0 0 0 0zm0 2a1 1 0 010-1v1zm0-2v-1zm-1 4v-1a3 3 0 010 1zm0-1c0-1 0-1 0 0zm0-5a2 2 0 010 1v-1zm-1 3a2 2 0 011-1v1zm0 1v0zm0-5v0zm0 2v0zm0 4zm0-1h-1a2 2 0 011 1h-1a1 1 0 010-1s0 1 0 0a2 2 0 010-1v1a2 2 0 011 1v-1zm0 2a4 4 0 010-2 5 5 0 010 2zm0-6v-1zm-5-5c0 1 0 1 0 0v-1 1zm0-7v-1a8 8 0 011-1l-1 2zm0 3c0-1 0 0 0 0 0 1 0 0 0 0zm0 2a17 17 0 010-3v3a4 4 0 010 1v-1zm-1-2a3 3 0 010-1v-1a6 6 0 010 2zm0 2a9 9 0 010-1c0 1 0 0 0 0v1zm-3-4v-1a10 10 0 010-1v2zm0 3c0-1 0 0 0 0 0 1 0 0 0 0zm-1 2a16 16 0 010-3v3a4 4 0 010 1v-1zm-1-2a3 3 0 010-1v-1a6 6 0 010 2zm0 2a9 9 0 010-1c0 1 0 0 0 0v2zm-1-2l1-1a4 4 0 010 1h-1v1a5 5 0 010 1v-1 1a9 9 0 010-2zm-1 0v-2 2zM11 60v-1l1-1v1l-1 1zm2 0v-1 2a5 5 0 010 1v-1c0-1-1 1 0 0a9 9 0 010-2s0-1 0 0zm1 1l-1 1a9 9 0 010-1h1zm0-2c0 1 0 1 0 0h-1 1v-1a6 6 0 010 1zm1 2a4 4 0 010 1h-1l1-1a16 16 0 010-3v3zm0-1v-1 1zm0-5v1a7 7 0 010-1c0-1 0 0 0 0zm3 5v1a7 7 0 010-1c0-1 0-1 0 0zm0-2c0 1 0 0 0 0a3 3 0 010-1v0a6 6 0 010 1zm1 5v-1 1zm0-3a4 4 0 010 1v-1a16 16 0 010-3v3zm1-1v-1 1zm0-5v0a7 7 0 010-1v1zm6 18c0 1 0 0 0 0zm-1-4v-1 1zm-1-1zm0 5s0-1 0 0a3 3 0 000-1v1a2 2 0 010-1 2 2 0 010 1zm0 1a5 5 0 010-1 4 4 0 010 1zm1 0a1 1 0 01-1-1l1 1c0 1 0 0 0 0zm0-4h-1zm0 2v0zm0-1s0 1 0 0c0 0 0-1 0 0zm0-2h0zm1 5h0v-1a2 2 0 010 1zm0-3v-1 1zm0 1c0-1 0 0 0 0zm1-2zm0 3v-1 1zm1-2zm33-11h-1v-1l1-1a6 6 0 010 2zm1 0c0-1 0 0 0 0zm0-5v1a9 9 0 010-1zm2 4v1a5 5 0 010 1v-1c0-1 0 1 0 0a9 9 0 010-1l1-1a4 4 0 01-1 1zm1 1c0 1 0 0 0 0v1a9 9 0 010-1zm0-1v-1c0-1 0 1 0 0v-1a6 6 0 010 2zm1 4v-1 1zm0-3a4 4 0 010 2v-1a16 16 0 010-4v3zm1-1h-1 1zm0-5v1a9 9 0 010-1zm6 6l-1 1a2 2 0 011-2v1zm1-1h-1a1 1 0 011-1v1zm0 0v0zm0 4v1a7 7 0 010-2v1zm2-1l-1-1 1 1zm1-1l-1 2 1-2zm0-3v-1-2a10 10 0 010 3zm3 6h-1l1-1v-1s0-1 0 0v2zm1-8v0zm1 0a6 6 0 010-1v1c0 1 0 1 0 0zm4 0h-1l1-1a6 6 0 010 1zm0 3v-1-1l1 1-1 1zm0-4v1a9 9 0 010-2c0-1 0 0 0 0v1a8 8 0 010-3v1h1l-1 1h1l-1 1zm1-3v-1-1 2zm1 0v-1 2a5 5 0 010 1v-1c0-1 0 1 0 0a9 9 0 010-2s0-1 0 0a3 3 0 010 1zm1 1v1a9 9 0 010-1s0-1 0 0zm0-2c0 1 0 1 0 0v-1a6 6 0 010 1zm1 2a4 4 0 010 1c0 1 0 1 0 0v-1a16 16 0 010-3v3zm0-1v-1 1zm1-5l-1 1a9 9 0 011-1c0-1 0 0 0 0zm2 3c0 1 0 0 0 0v2a5 5 0 01-1 1l1-1h-1a9 9 0 011-2s0-1 0 0zm1 2h-1v1a9 9 0 010-1h1zm0-2h-1c0-1 0 0 0 0l1-1a6 6 0 010 1zm1 5l-1-1a1 1 0 011 1zm-1-3h1a4 4 0 01-1 1s0 1 0 0v-1a16 16 0 011-3v3zm1-1v-1 1zm0-5v0a10 10 0 010-1v1zm4 13h1zm39-33l-1-2h-1l1-1 1-2v5zm-2-3l-1-1 1 1zm-6 5v-1 1zm6-2l-1 1v1a3 3 0 010-2v-1-1a2 2 0 011 2zm0-7l1 1-1-1zm1 10v-1h-1v1c-1 0 0 0 0 0v-1a7 7 0 011-2c0-1 0-1 0 0v2h1v1h-1zm10 4v-1 1zm1-3v0zm5-5l1-1-1 1zm9 9l-1-2v-1l1 1a3 3 0 010 2zm0-5l1 1-1-1zm6 32l-1 2v-2zm0 0h-1c0-1 0 0 0 0a3 3 0 010-1h1v-1a6 6 0 010 2zm0-3v-1-2a9 9 0 010 3zm1 3c0-1 0 0 0 0 0 1 0 0 0 0zm0-3v-1a10 10 0 010-1v2zm10 0v-1 1zm-8-2l1 1-1-1zm2 6a4 4 0 010 1v-1a16 16 0 010-3v3zm1-2h-1 1c0 1 0 0 0 0zm0-5v1a9 9 0 010-1zm5 6v0zm1 4s0 1 0 0l1-3a4 4 0 010 2l-1 1zm10 0v1a6 6 0 010-2l1-1-1 2zm1-2v2a12 12 0 010-3l1 1h-1zm2 3v-1h-1v-3 3l1-2a8 8 0 010 3zm1-1v0zm0-2v-1l1 2-1-1zm5-4v-2 3zm9-6v0zm0-5v-2h1l-1 2zm7 14l1-2-1 2zm12 1c0 1 0 1 0 0 0 0 0 1 0 0v-1a6 6 0 010 1zm1 2a4 4 0 010 1v-1a16 16 0 010-3v3zm0-1v-1 1zm1-5l-1 1a10 10 0 011-1c0-1 0 0 0 0zm1-7c-1 1-1-1-1-2l1 1a3 3 0 010 1zm1 10c0 1 0 0 0 0v2a5 5 0 01-1 1l1-1h-1a9 9 0 011-2s0-1 0 0zm1 2h-1v1a9 9 0 010-1h1zm0-2h-1c0-1 0 0 0 0l1-1a6 6 0 010 1zm1 5l-1-1a1 1 0 011 1zm-1-3h1a4 4 0 01-1 1s0 1 0 0v-1a17 17 0 011-3v3zm1-1v-1 1zm0-4a9 9 0 010-2v2zm26 14v0l1-1s0-1 0 0c0 2 0 1-1 1zm2-7a6 6 0 011-1l-1 1zm4 0s0 1 0 0v-1a6 6 0 010 1zm1 3v-1s0 1 0 0v-1 2zm0-4a9 9 0 010-1c0-1 0 0 0 0l-1 1a8 8 0 011-3v3zm0-3v-1-2l1 1-1 2zm2-1v2a5 5 0 010 1v-1h-1a9 9 0 011-2v-1a4 4 0 010 1zm1 2s0-1 0 0l-1 1a9 9 0 010-1h1zm0-2h-1a3 3 0 010-1h1a6 6 0 010 1zm1 2a4 4 0 01-1 1v-1a17 17 0 011-3v3zm0-1v-1 1zm0-5v0a9 9 0 010-1v1zm2 3v1a5 5 0 010 2v-2 1a9 9 0 010-2l1-1a4 4 0 01-1 1zm1 2s0-1 0 0v1a9 9 0 010-2v1zm0-2c0 1 0 0 0 0a3 3 0 010-1v-1a6 6 0 010 2zm1 5v-1a1 1 0 010 1zm0-4v1a4 4 0 010 1v-1a16 16 0 010-3v2zm1 0l-1-1c1-1 1 0 1 1zm0-6v1a7 7 0 010-1zm20-17h-1zm3 14v-2a3 3 0 010 2zm0 1h-1 1zm-3-6v0a7 7 0 010-3l1 1h-1l1 1 1 1h-1v-1h-1v1zm1-3v-2l-1 1 1-1 1-2-1 2v2zm-2 0v-1a2 2 0 010 1v3a3 3 0 01-1-2l1-1zm0-3v0zm-6 6l1-1-1 1zm9 8l-1 2v2l-1 1-1 1v1c-1 0 0 0 0 0v-1a3 3 0 000-1v-1-1h1c1-1 0-2-1-2v1s-1 1-1-1v-1l1 1-1-3a15 15 0 010-2 8 8 0 010-2l1-1 1 2v-1l2 1h-1v2l1 2 1 1-1-1h-1l1 1zm1 5l1-2v-1 1a3 3 0 010 1l-1 1zm2 2a2 2 0 01-1-1v-1l1-1v-2a3 3 0 010 1v2 2zm1-4a1 1 0 010 1h-1v0a3 3 0 010-1h1zm-1-3v-1s0 1 0 0v1h-1v-2c1-1 0 1 0 0l1-1a3 3 0 010 1l1 1-1 1zm3-6v1-1zm1 3l-1-1h1a1 1 0 010 1zm1-1l1-1-1 1zm1 5a3 3 0 010-1v-1h1v1l-1 1zm0-7l1 2-1-2zm14 3v-2 1a3 3 0 010 1zm0-5l1 1v1l-1-2zm-8-4s0 1 0 0zm33 20v-1-2 3zm1-1v1a5 5 0 010 1v-1 1a9 9 0 010-2v-1a4 4 0 010 1zm1 2v-1 1a7 7 0 010-1v1zm0-2a3 3 0 010-1v-1a6 6 0 010 2zm1 1v1a4 4 0 010 1v-1a16 16 0 010-3v2zm1-1h-1 1c0 1 0 0 0 0zm0-5v1a8 8 0 010-1zm3 5c0 1 0 0 0 0l-1 1a7 7 0 010-1h1zm0-1h-1a3 3 0 010-1h1v-1a6 6 0 010 2zm1 4c0 1 0 0 0 0v-1 1zm0-3v1a4 4 0 010 1h-1l1-1a17 17 0 010-3v2zm0-1c0-1 0 0 0 0 0 1 0 0 0 0zm0-5v1a6 6 0 010-1zm6 19a1 1 0 010-1v1zm-1-5v-1 1zm0 0v-1 1zm0 4h-1a2 2 0 010 1 1 1 0 010-1s0 1 0 0a2 2 0 010-1v0a2 2 0 011 2v-1zm0 1a5 5 0 010-1 4 4 0 010 2zm0 0zm0-3v-1 1zm0 2v0zm1-2l-1 1a2 2 0 010-1h1zm0-2a3 3 0 010 1v-1zm0 6v-1a2 2 0 010 1zm0-4l1-1-1 1zm1 2a1 1 0 010-1v1zm0-2zm1 3a2 2 0 010-1l-1-1 1 2zm1-2v-1 1zm32-12c0 1 0 0 0 0a3 3 0 010-1v0a6 6 0 010 1zm1 1v-1 1zm1-5l-1 1 1-1a9 9 0 010-1v1zm2 3c0 1 0 0 0 0v2a5 5 0 010 1v-1h-1a9 9 0 011-2v-1a4 4 0 010 1zm1 2l-1 1a9 9 0 010-1h1zm0-2h-1a3 3 0 010-1h1c1 0 0-1 0 0a6 6 0 010 1zm1 5v-1 1zm0-3a4 4 0 01-1 1v-1a16 16 0 011-3v3zm0-1v-1 1zm0-5v0a7 7 0 010-1v1zm6 6c0-1 0 1 0 0a2 2 0 010-1v1zm1-2v1a1 1 0 010-1v1zm0 0l1 2-1-2zm1 4v1a7 7 0 010-2v1zm1 0v-1 1zm1-1s0 2-1 1 1-2 1-1zm1-4c0 1 0 0 0 0v-3a9 9 0 010 3zm2 6s0 1 0 0v-1-1l1 1-1 1zm1-7h0zm1 0a6 6 0 010-1v1zm4 0v-1a6 6 0 010 1zm1 3v-1s0 1 0 0v-1 2zm0-4a9 9 0 010-1h-1v1a8 8 0 011-3v2c0-1 0 0 0 0v1zm0-3v-1-2 3zm2-1h-1v1a5 5 0 010 2v-2 1a9 9 0 010-2l1-1a4 4 0 010 1zm0 2s0-1 0 0v1a9 9 0 010-1c0-1 0-1 0 0zm0-2c0 1 0 0 0 0a3 3 0 010-1 6 6 0 010 1zm1 1v1a4 4 0 010 1v-1a16 16 0 011-3l-1 2zm1 0v-1 1zm0-6v1a9 9 0 010-1zm2 4v1a5 5 0 010 1v-1 1a9 9 0 010-2v-1a4 4 0 010 1zm1 1c0 1 0 0 0 0v1a9 9 0 010-1zm0-1a3 3 0 010-1v-1a6 6 0 010 2zm1 4c0 1 0 1 0 0zm0-3v1a4 4 0 010 1v-1a16 16 0 010-3v2zm0-1h0zm1-5l-1 2 1-1a8 8 0 010-1zm4 14s0-1 0 0zm30-31l1-1-1 1zm8-2v-2h-1l1-1 1-2-1 2v2zm-2-3v-1 1zm0 2v3a3 3 0 01-1-2l1-1v-1a2 2 0 010 1zm0-6h0zm2 9l-1-1c-1 0 0 0 0 0v1a7 7 0 010-3l1 1h-1l1 1v1h0zm9 4l1-1-1 1zm1-2l1 2-1-2zm6-6s0-1 0 0zm8 9v-2 1a3 3 0 010 1zm0-5l1 1v1l-1-2zm6 33l-1 1 1-1zm0-1c0 1 0 1 0 0v-1a6 6 0 010 1zm1-3h-1l1-3a9 9 0 010 3zm0 4v-1l1 1h-1zm0-4h1a9 9 0 010-1c0-1 0 0 0 0l-1 1zm10 1v-2 2zm-7-2h0zm2 5a4 4 0 01-1 1s0 1 0 0v-1a16 16 0 011-3v3zm0-1v-1 1zm0-5v1a10 10 0 010-1c0-1 0 0 0 0zm5 6h1l-1 1 1 1-1-2zm2 4v-4a4 4 0 010 3v1zm9-1v2a6 6 0 010-2c0-2 1-3 1-1l-1 1zm2-1l-1 1a12 12 0 010-2c0-1 1-1 1 1 0 0 0-1 0 0zm2 3l-1-1v-3 3s0-3 1-2a8 8 0 010 3zm0-1l1 1-1-1zm1-2l-1-1c0-2 1 0 1 1h-1zm5-4l-1-3 1 3zm8-6c1-1 1 0 1 1l-1-1zm1-6v-2 2zm6 14c1 0 1-3 1-1l-1 1zm12 2c0 1 0 0 0 0a3 3 0 010-1v-1a6 6 0 010 2zm1 1v1a4 4 0 010 1v-1a16 16 0 011-3l-1 2zm1 0v-1 1zm0-6v1a9 9 0 010-1zm1-6v-2-1a2 2 0 000 1 3 3 0 010 2zm1 10v1a5 5 0 010 1v-1 1a9 9 0 010-2v-1a4 4 0 010 1zm1 1c0 1 0 0 0 0v1a9 9 0 010-1zm0-1a3 3 0 010-1v-1a6 6 0 010 2zm1 4c0 1 0 1 0 0zm0-3v1a4 4 0 010 1v-1a16 16 0 010-3v2zm0-1c0-1 0 0 0 0 0 1 0 0 0 0zm0-3l1-1a9 9 0 010-1l-1 2zm27 14s0 1 0 0v-1-1 2zm2-7a7 7 0 010-2v2zm4 0h-1l1-2a6 6 0 010 2zm0 2c0-1 0 0 0 0v-2l1 1-1 1zm0-3v-1 1a9 9 0 010-2v1s0 1 0 0a8 8 0 010-2v1l1-1-1 2a2 2 0 010-1l1 1-1 1zm1-4v-2 2zm1 0v1a5 5 0 010 1v-1c0-1 0 1 0 0a9 9 0 010-1v-1a4 4 0 010 1zm1 1v1a9 9 0 010-1zm0-1v-1s0 1 0 0v-1a6 6 0 010 2zm1 1a4 4 0 010 2v-1a16 16 0 010-4v3zm0-1c0-1 0 0 0 0 1 0 0 0 0 0zm1-5l-1 1h1a9 9 0 010-1zm2 4s0-1 0 0v1a5 5 0 010 1v-1h-1a9 9 0 011-1v-1a4 4 0 010 1zm1 1l-1 1a7 7 0 010-1h1zm0-2h-1c-1-1 0 1 0 0h1v-1a6 6 0 010 1zm1 5v-1a1 1 0 010 1zm0-3a4 4 0 01-1 2v-1a16 16 0 011-4v3zm0-1v-1 1zm0-5v1a7 7 0 010-1zm14-8v-1 1zm9 4v-1a3 3 0 010 1zm0 1c0 1-1 0 0 0zm-2-5h-1v-1a7 7 0 011-2s0-1 0 0v2h1v1h-1v-1h-1l1 1zm-2-3c1-1 0-2 1-1a2 2 0 010 1l-1 1v1a3 3 0 010-2zm0-3h0zm1-4l1 1-1-1zm2 7l-1-2h-1l2-1v-1 4zm0 11l-1 1v1 1c0 1 1 0 0 0v1l-1 1v2l-1-1 1-1a3 3 0 000-1l-1-1c0-1 0 0 0 0l1-1v-1l-1 1-1-1h1v-1-2a15 15 0 010-2 8 8 0 010-2l1-1 1 2v-1s1-1 1 1l-1-1v2l1-1v3l1 1h-1s0-1 0 0v1zm1 4l1-1 1-1v1a3 3 0 01-1 1h-1zm2 2a2 2 0 010-1h-1l1-2 1-1a3 3 0 010 1l-1 1v2zm1-3v2l-1-1a3 3 0 011-1c0-1 0-1 0 0zm0-4l-1-1v2l-1-2h1v-1a3 3 0 011 1v1c0 1 0 0 0 0zm2-6l1 2-1-2zm1 3h-1l1-1a1 1 0 010 1zm2 0v-1 1zm0 5a3 3 0 010-2h1l-1 2zm1-8v0zm5-5l1-1-1 1zm9 9l-1-2v-1l1 1a3 3 0 010 2zm0-5v1h1l-1-1zm13-10l-1 1 1-1z" fill-rule="evenodd"/><path d="M301 59v2a2 2 0 000 1l1-1-1-2zM98 61s0 1 0 0l-1 1a4 4 0 011-1l-1-1-1-1v0h-1v3h1a6 6 0 01-1 1 2 2 0 001 0 4 4 0 001-1c0 1 0 1 0 0a3 3 0 001 0v-1zm-2 1v-1 1zm0-1l1 1-1-1zm1 1v-1 1zM171 61l-1 2c-1 0 0 0 0 0v3a3 3 0 010 1c0 1 0 0 0 0v1a1 1 0 011-1v-1l1 2a11 11 0 00-1-6v-1zM264 71zM198 70zM264 71zM23 74zM23 76v-1 1h1l-1-1a2 2 0 000 1zM22 76c0 1 0 0 0 0zM62 61v0c0-1 0 0 0 0zM72 66v-2 2zM19 67v1zM11 62v0c0-1 0 0 0 0zM15 62zM94 59v-1a2 2 0 00-1 1h1a3 3 0 000 1l1 3v-1-1l-1-2zM74 65a1 1 0 000 1h1v-1h-1zM91 52l-1 1v0a3 3 0 010 1 7 7 0 000 1l1-2v-1zM165 60zM88 58a2 2 0 000-1v1zM84 62v-1 1zM85 62a4 4 0 000-1 1 1 0 010 1zM407 67a1 1 0 000 1h1v-1h-1zM396 62l-1 1 1 1v-1-1zM499 62v-1a3 3 0 000 1zM421 59a2 2 0 000-1 2 2 0 010 1zM418 63zM405 67h1a8 8 0 000-1l-1 1zM352 69h1zM348 64v-1a1 1 0 000 1zM344 64c1-1 0 0 0 0zM357 76zM357 77a1 1 0 000 1 1 1 0 010-1zM355 77v1a1 1 0 010-1zM418 64v-1 1zM531 72v-1 1zM562 66v1a7 7 0 000 1v-1-1zM504 63v5a3 3 0 010 1v-1 1a1 1 0 010-1l1-1v2a11 11 0 00-1-5v-1zM604 64s-1 1 0 0l-1 1v-1a3 3 0 010 1 6 6 0 000 1l1-2v-1 1zM505 72h-1v1h1a2 2 0 000-1zM597 73zM598 73zM635 61l-1 2h1v-1-1zM424 54v1a7 7 0 000 1v-1-1zM501 63zM428 61v-1h-1a2 2 0 000 1 3 3 0 001 1v-1zM431 63v-1l-1-1h-1v-1 4c0-1 0-1 0 0a6 6 0 010 1 4 4 0 002-1h-1l1-1v0zm-2 0h0zm1 0v0zm0 1v-1 1zM431 63v1-1z" fill-rule="evenodd"/><path d="M432 62a1 1 0 00-1 0 2 2 0 000 1l1-1-1 1h1v-1zM740 67a1 1 0 000 1h1v-1h-1zM751 63zM738 67h1v-1l-1 1zM751 64v-1 1zM761 61v-1h-1a2 2 0 000 1 3 3 0 001 1v2l1-2-1-1zM757 54v1a7 7 0 000 1v-1-1zM755 59a2 2 0 000-1 2 2 0 01-1 1h1zM682 64v-1a1 1 0 000 1zM677 64h0zM686 69zM729 62v1h-1l1 1v-1-1zM690 76zM690 77a1 1 0 000 1 1 1 0 010-1zM688 77a8 8 0 000 1h1a1 1 0 01-1-1zM931 73zM895 66v1a7 7 0 000 1v-1-1zM832 62a1 1 0 000-1 1 1 0 000 1zM837 63v5a3 3 0 010 1v-1 1h1a1 1 0 010-1v-1 2a11 11 0 000-5l-1-1zM864 72l1-1-1 1zM937 64s0 1 0 0v0h-1a3 3 0 010 1 7 7 0 000 1c1 1 1-1 1-2v-1 1zM968 61v2a2 2 0 00-1 0h1v-1-1zM930 73h1-1zM838 72h-1a3 3 0 000 1 3 3 0 001 0 2 2 0 000-1z" fill-rule="evenodd"/><path d="M765 63h-1s0 1 0 0v-1l-1-1s0 1 0 0l-1-1c-1 0 0 0 0 0v4c0-1 0-1 0 0a6 6 0 010 1 2 2 0 001 0 4 4 0 001-1v-1 1l1-1zm-2 0zm0 0v0zm0 1v-1 1z" fill-rule="evenodd"/><path d="M764 63v1l1-1h-1zM765 62a1 1 0 00-1 0 2 2 0 001 1v-1 0zM834 63z" fill-rule="evenodd"/></g></svg>'); 
+    }
+    
+    @media (min-width:2100px){
+    .shape-3666::before{
+    background-size: 100% calc(2vw + 67px);
+    }
+    }
+    
+    @keyframes shape-anim-3666 {
+      100% {
+        transform: scaleX(1.2) translateX(calc(100% - (100% / 1.2)));
+      }
+    }
+
+
+/*Work Divider - Top*/
+
+.shape-7168{
+overflow:hidden;
+position:relative;
+}
+.shape-7168::before{ 
+content:'';
+font-family:'shape divider from ShapeDividers.com';
+position: absolute;
+z-index: 3;
+pointer-events: none;
+background-repeat: no-repeat;
+bottom: -0.1vw;
+left: -0.1vw;
+right: -0.1vw;
+top: -0.1vw; 
+transform:scaleX(2.8);
+transform-origin: 100% 0;
+animation: 4s infinite alternate shape-anim-7168  linear;
+background-size: 100% 95px;
+background-position: 50% 0%;  background-image: url('data:image/svg+xml;charset=utf8, <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><g fill="%23191715"><path d="M907 19c-55-5-97 5-109 8-44 12-44 24-101 44-36 12-63 21-97 20-46-1-81-20-100-33-19 13-54 32-100 33-34 1-61-8-97-20-57-20-57-32-101-44-12-3-54-13-109-8A306 306 0 000 43V0h1000v43a306 306 0 00-93-24z"/><path d="M50 38s76-32 155 2c0 0-65-21-155-2z" opacity=".5"/><path d="M80 46s47-20 95 1c0 0-40-13-95-1z" opacity=".3"/><path d="M801 38s76-32 155 2c0 0-65-21-155-2z" opacity=".5"/><path d="M831 46s47-20 95 1c0 0-40-13-95-1z" opacity=".3"/></g></svg>'); 
+}
+
+@media (min-width:2100px){
+.shape-7168::before{
+background-size: 100% calc(2vw + 95px);
+}
+}
+
+@keyframes shape-anim-7168 {
+  100% {
+    transform: scaleX(2.8) translateX(calc(100% - (100% / 2.8)));
+  }
+}
+
+   
+     
+/*Contact Divider - Top*/
+
+
+.shape-8321{
+    overflow:hidden;
+    position:relative;
+    }
+    .shape-8321::before{ 
+    content:'';
+    font-family:'shape divider from ShapeDividers.com';
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    bottom: -0.1vw;
+    left: -0.1vw;
+    right: -0.1vw;
+    top: -0.1vw; 
+    transform:scaleX(1.2);
+    transform-origin: 100% 0;
+    animation: 10s infinite alternate shape-anim-8321  linear;
+    background-size: 100% 18px;
+    background-position: 50% 0%;  background-image: url('data:image/svg+xml;charset=utf8, <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><g fill="%23d1d1d1"><path d="M0 72c4 2 11 3 15-1 3-3 5-8 10-10 5-3 11-1 15 3l5 6a18 18 0 007 4 12 12 0 0013-4c2-2 3-9 8-8 3 1 4 4 6 6 7 7 18 2 22-6 1-2 4-6 8-5a7 7 0 014 3c0 4 2 7 6 9 4 3 11 3 15 0 3-3 5-8 9-10 5-2 12-1 16 3 2 1 2 4 5 6a19 19 0 006 4 12 12 0 0013-4c2-2 4-9 8-8 3 1 5 4 7 6 7 7 17 2 21-5 2-3 5-6 8-6s5 5 7 8a13 13 0 008 6c5 2 8-5 11-9 5-6 9 0 12 4s11 4 14 0l4-6c6-8 11 9 14 12 4 4 9 5 14 2 4-3 6-8 8-12 2-3 4-6 7-4 3 1 5 4 6 6a19 19 0 005 8c4 4 11 3 15 0s5-8 10-10 11-1 15 3l5 6a18 18 0 007 4 12 12 0 0013-4c2-2 4-9 8-8 3 1 4 4 6 6 8 7 18 2 22-5 2-3 4-6 8-6s5 5 7 8a13 13 0 007 6c6 1 8-6 11-9 5-6 9 0 13 4 3 4 11 4 14 0l3-6c6-8 12 9 14 12 4 4 10 5 15 2 4-3 6-8 8-12 4-8 9-1 14 3 3 8 12 13 19 7 4-3 5-9 10-10 5-3 11-1 15 3l5 6a19 19 0 007 4 12 12 0 0013-4c2-2 3-9 8-8 3 1 4 4 6 6 7 7 18 2 22-6 1-2 4-6 8-5s5 5 6 8a13 13 0 008 6c6 1 8-6 11-9 5-6 9 0 12 4s11 4 15 0l3-6c6-8 12 9 14 12 4 4 9 5 14 2 4-3 6-8 9-12 1-3 3-6 7-4 2 1 4 3 5 6a19 19 0 005 8c4 4 12 3 16 0 3-4 5-9 9-11 5-2 12 0 15 3 3 2 3 5 5 7a18 18 0 007 4 12 12 0 0013-4c2-2 4-9 8-8 3 1 4 4 7 6 7 7 17 2 21-6 2-2 5-6 8-5s5 5 7 7a13 13 0 008 7c5 1 8-6 11-9 5-6 9 0 12 4s11 4 14 0c2-2 2-5 4-6 6-8 11 9 14 12 4 4 9 5 14 2 4-3 6-8 8-12 4-7 11-2 14 3 1 1 3 3 5 3s6-4 6-7V51c1 2-4 6-6 6s-4-2-5-3c-3-4-10-10-14-3-2 4-4 9-8 12-5 3-10 2-14-2-3-3-8-20-14-12l-4 6c-3 4-11 4-14 0s-7-10-12-4c-3 3-6 11-11 9a13 13 0 01-8-6c-2-3-3-7-7-8s-6 3-8 6c-4 7-14 12-21 5-3-2-4-5-7-5-4-2-6 5-8 7a12 12 0 01-13 4 18 18 0 01-7-4c-2-2-2-5-5-6-3-4-10-5-15-3-4 2-6 7-9 10-4 3-12 4-16 0a19 19 0 01-5-8l-5-6c-4-2-6 1-7 4-3 4-5 9-9 12-5 3-10 2-14-2-2-3-8-20-14-12-2 2-2 5-3 7-4 3-12 3-15-1s-7-10-12-4c-3 4-5 11-11 9a13 13 0 01-8-6c-1-3-3-7-6-8s-7 3-8 6c-4 7-15 12-22 5-2-2-3-5-6-5-5-2-6 5-8 7a12 12 0 01-13 4 19 19 0 01-7-4l-5-6c-4-4-11-5-15-3-5 2-7 7-10 10-7 6-17 1-19-7-5-4-10-11-14-3-2 4-4 9-8 12-5 3-11 2-15-2-2-3-8-20-14-12-2 2-2 5-3 7-4 3-11 3-14-1-4-4-8-10-13-4-3 4-5 11-11 9a13 13 0 01-7-6c-2-3-4-7-7-8s-7 3-8 6c-4 7-15 12-22 5-2-1-3-5-6-5-5-2-6 5-8 7a12 12 0 01-13 4 18 18 0 01-7-4l-5-6c-4-4-10-5-15-3s-6 7-10 10c-4 4-11 4-15 1a19 19 0 01-5-9c-1-2-3-5-6-6-3-2-5 1-7 4-2 4-4 9-8 12-5 3-10 2-14-2-3-3-8-19-14-12l-4 7c-3 4-11 3-14-1s-7-10-12-4c-3 4-5 11-11 9a13 13 0 01-8-6c-2-3-3-7-7-8s-6 3-8 6c-4 7-14 12-21 5-3-1-4-5-7-5-4-1-6 5-8 7a12 12 0 01-13 4 19 19 0 01-7-4c-2-1-2-4-5-6-3-3-10-5-15-3-4 2-6 7-9 10-4 4-11 3-16 1-3-2-5-6-5-10a7 7 0 00-5-3c-3-1-6 3-7 6-4 7-15 12-22 6-2-2-3-6-6-6-5-2-6 5-8 8a12 12 0 01-13 3 18 18 0 01-7-4l-5-6c-4-4-10-5-15-3s-7 7-10 10c-4 4-11 3-15 1s-5-6-6-10v7c0 6 1 12 6 15z" opacity=".3"/><path d="M0 60c4 2 11 3 15-1 3-3 5-8 10-10s11-1 15 3l5 6a18 18 0 007 5 12 12 0 0013-4c2-3 3-10 8-8 3 0 4 4 6 6 7 6 18 1 22-6 1-3 4-6 8-6a7 7 0 014 3c0 4 2 8 6 10s11 3 15-1c3-3 5-8 9-10 5-2 12 0 16 3 2 2 2 5 5 7a19 19 0 006 3 12 12 0 0013-3c2-3 4-9 8-8 3 1 5 4 7 6 7 6 17 1 21-6 2-3 5-6 8-5s5 4 7 7a13 13 0 008 6c5 2 8-5 11-9 5-6 9 0 12 4s11 5 14 1c2-2 2-5 3-7 7-7 12 9 15 12 4 4 9 5 14 2 4-3 6-8 8-12 2-3 4-6 7-4 3 1 5 4 6 6a19 19 0 005 9c4 3 11 3 15-1 4-3 5-8 10-10s11-1 15 3l5 6a18 18 0 007 4 12 12 0 0013-4c2-2 3-9 8-7 3 0 4 4 6 5 7 7 18 2 22-5 2-3 4-6 8-6s5 5 7 8a13 13 0 007 6c6 2 8-5 11-9 5-6 9 0 13 4 3 4 10 4 14 1 1-2 1-5 3-7 6-8 12 9 14 12 4 4 10 5 15 2 4-3 6-8 8-12 4-8 9-1 14 3 3 8 12 13 19 7 3-3 5-8 10-10 4-2 11-1 15 3l5 6a19 19 0 007 4 12 12 0 0013-4c2-2 3-9 8-7 3 0 4 3 6 5 7 7 18 2 22-5 1-3 4-6 8-6s5 5 6 8a13 13 0 008 6c6 2 8-5 11-9 5-6 9 0 12 4s11 4 15 1c1-2 1-5 3-7 6-8 12 9 14 12 4 4 9 5 14 2 4-3 6-8 9-12 1-3 3-6 7-4l5 6a19 19 0 005 8c4 4 12 3 16 0 3-3 5-8 9-10 5-2 12-1 15 3 3 2 3 4 5 6a18 18 0 007 4 12 12 0 0013-4c2-2 4-9 8-8 3 1 4 4 7 6 7 7 17 2 21-5 2-3 5-6 8-6s5 5 7 8a13 13 0 008 6c5 2 8-5 11-9 5-6 9 0 12 4s11 4 14 0l3-6c7-8 12 9 15 12 4 4 9 5 14 2 4-3 6-8 8-12 4-7 11-1 14 3 1 2 3 3 5 3s6-4 6-6V0H-6v5l1 25-1 20c1 4 2 8 6 10z"/></g></svg>'); 
+    }
+    
+    @media (min-width:2100px){
+    .shape-8321::before{
+    background-size: 100% calc(2vw + 18px);
+    }
+    }
+    
+    @keyframes shape-anim-8321 {
+      100% {
+        transform: scaleX(1.2) translateX(calc(100% - (100% / 1.2)));
+      }
+    }
+    
+       
+
+    
